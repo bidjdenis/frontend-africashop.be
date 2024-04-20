@@ -8,14 +8,14 @@
 </head>
 <body>
 <div class="form-container " style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-    <h5 class="text-center mt-2">S'inscrire</h5>
+    <h5 class="text-center mt-2">Registration</h5>
     <form [formGroup]= "signupForm" (ngSubmit)="submit()">
         <div class="form-group">
-            <label for="name">Nom</label>
+            <label for="name">Name</label>
             <input [ngClass]="{'is-invalid': submitted && f.name.errors}" formControlName="name" class="form-control" type="text">
             <div *ngIf="f.name.errors" class="invalid-feedback">
                 <div>
-                    <i>Le nom est obligatoire</i>
+                    <i>Required name</i>
                 </div>
             </div>
         </div>
@@ -25,34 +25,36 @@
             <input [ngClass]="{'is-invalid': submitted && f.email.errors}" formControlName="email" class="form-control" type="text">
             <div *ngIf="f.email.errors" class="invalid-feedback">
                 <div>
-                    <i>L'email est obligatoire</i>
+                    <i> Required mail </i>
                 </div>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="password">Mot de passe</label>
+            <label for="password">Password</label>
             <input [ngClass]="{'is-invalid': submitted && f.password.errors}" formControlName="password" class="form-control" type="text">
             <div *ngIf="f.password.errors" class="invalid-feedback">
                 <div>
-                    <i>Le mot de passe est obligatoire</i>
+                    <i>Required password</i>
                 </div>
             </div>
         </div>
 
         <div class="form-group">
-            <label for="confirmPassword">Confirmer mot de passe</label>
+            <label for="confirmPassword">Confirm password</label>
             <input [ngClass]="{'is-invalid': submitted && f.confirmPassword.errors}" formControlName="confirmPassword" class="form-control" type="text">
             <div *ngIf="f.confirmPassword.errors" class="invalid-feedback">
                 <div>
-                    <i>Le mot de passe est obligatoire</i>
+                    <i>Required password</i>
                 </div>
             </div>
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-outline-success btn-block mt-2" >Enregistrer</button>
+            <button type="submit" class="btn btn-outline-success btn-block mt-2" >Sign up</button>
         </div>
+        <p class="text-center text-muted mt-2 mb-0">Have already an account? <a routerLink="/auth-pages/login"
+            class="fw-bold text-body"><u>Login here</u></a></p>
     </form>
 </div>
 

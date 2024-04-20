@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit{
   get f(){return this.signupForm.controls}
 
   submit() : void {
+    this.submitted = true;
 
     const password = this.signupForm.get('password')?.value
     const confirmPassword = this.signupForm.get(' confirmPassword')?.value
@@ -37,7 +38,6 @@ export class RegisterComponent implements OnInit{
       return;
     }
 
-    this.submitted = true;
     if(this.signupForm.invalid){
       return;
     }
