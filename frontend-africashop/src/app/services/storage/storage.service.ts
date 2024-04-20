@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { User } from '../../payload/user';
 
 
 const TOKEN = "ecom-token";
@@ -17,7 +18,7 @@ export class StorageService {
     window.localStorage.setItem(TOKEN, token);
   }
 
-  public saveUser(user : any): void{
+  public saveUser(user : User): void{
     window.localStorage.removeItem(USER);
     window.localStorage.setItem(USER, JSON.stringify(user));
   }

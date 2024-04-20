@@ -7,6 +7,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -18,8 +20,8 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
-    
+    CommonModule,
+    MatSnackBarModule
   ],
   providers: [
     provideAnimationsAsync()
