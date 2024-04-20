@@ -101,8 +101,8 @@
                       <ul class="nav justify-content-end">
                         
                         <select id="select5" class="mt-1" style="height: 30px; border-radius: 5px;">
-                            <option value="en" selected>French</option>
-                            <option value="fr">English</option>
+                            <option value="en" selected>English</option>
+                            <option value="fr">French</option>
                           </select>
                       
                           <li class="nav-item">
@@ -167,5 +167,75 @@
       </nav>
   </div>
   </div>
+  <div *ngIf="isAdminLoggedIn" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+    <div class="main-navbar shadow-sm sticky-top">
+      <div class="top-navbar">
+          <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
+                    <img src="assets/img/logo.png" alt="AFRICASHOP Logo" style="width: 150px;">
+                </div>
+             
+                
+                  <div class="col-md-5 my-auto">
+                      <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                          <a routerLink="/admin/dashboard" class="nav-link" href="#">
+                              <i class=""></i>Dashboard
+                          </a>
+                      </li> 
+                      <li class="nav-item">
+                        <a routerLink="/admin/category" class="nav-link" href="#">
+                            <i class=""></i>Category
+                        </a>
+                    </li> 
+                      <li class="nav-item">
+                        <a routerLink="/admin/country" class="nav-link" href="#">
+                            <i class=""></i>Country
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/admin/product" class="nav-link" href="#">
+                            <i class=""></i>Product
+                        </a>
+                    </li>
+                    
+                     
+                     <li class="nav-item">
+                              <a routerLink="/admin/coupon" class="nav-link" href="#">
+                                  <i class=""></i>coupons
+                              </a>
+                          </li>
+                          <li class="nav-item">
+                            <a routerLink="/admin/orders" class="nav-link" href="#">
+                                <i class=""></i>Orders
+                            </a>
+                        </li> 
+                        <li class="nav-item">
+                          <a routerLink="/admin/users" class="nav-link" href="#">
+                              <i class=""></i>Users
+                          </a>
+                      </li> 
+                          <li class="nav-item">
+                              <a class="nav-link"  routerLink="/admin/admin-profil"  role="button" aria-expanded="false">
+                                  <i class="fa fa-user"></i> Admin
+                              </a>
+                          </li>
+                         
+                        <li class="nav-item">
+                          <button routerLink="auth-pages/login" class="nav-link" (click)="logout()" style="color: white; background-color: gold; border-radius: 5px;"  role="button" aria-expanded="false">
+                              Logout
+                          </button>
+                      </li>
+                          
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+  </div>
+  </div>
+  
 
 <router-outlet></router-outlet> 
