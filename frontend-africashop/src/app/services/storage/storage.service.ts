@@ -23,7 +23,7 @@ export class StorageService {
   }
 
   static getToken(){
-    localStorage.getItem(TOKEN);
+    return localStorage.getItem(TOKEN);
   }
 
   static getUser(): any{
