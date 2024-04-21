@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../../../../payload/category';
 import { AdminService } from '../../../services/admin.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-list-category',
@@ -11,7 +12,7 @@ export class ListCategoryComponent implements OnInit {
 
   category : Category[] = [];
 
-  constructor(private adminService : AdminService){}
+  constructor(private adminService : AdminService, private snackbar : MatSnackBar){}
 
   ngOnInit(): void {
     this.getAllCategories();
@@ -24,5 +25,13 @@ export class ListCategoryComponent implements OnInit {
     }, err => {
       console.log(err);
     })
+  }
+
+  onDelete(id : number){
+    if(confirm('Are you sure for suppression')){
+      this.adminService.deleteCategory(id).subscribe(res => {
+        this.snackbar.open('deletion successful', 'close', {duration: 5000})
+      })
+    }
   }
 }

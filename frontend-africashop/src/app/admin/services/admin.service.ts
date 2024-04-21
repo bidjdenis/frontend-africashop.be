@@ -25,6 +25,12 @@ export class AdminService {
     });
   }
 
+  deleteCategory(id : number): Observable<any>{
+    return this.http.delete(this.BASIC_URL + `api/admin/deleteCategory/${id}`, {
+      headers : this.createAuthorizationHeader()
+    });
+  }
+
 
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
