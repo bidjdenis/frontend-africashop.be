@@ -10,7 +10,6 @@ import { User } from '../../payload/user';
 export class AuthService {
 
   BASIC_URL = "http://localhost:8080/";
-  AUTH_HEADER = 'authorization';
 
   constructor(private http: HttpClient, private storageService : StorageService) { }
 
