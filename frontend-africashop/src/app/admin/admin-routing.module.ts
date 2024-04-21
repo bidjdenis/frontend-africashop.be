@@ -5,7 +5,15 @@ import { AdminComponent } from './admin.component';
 
 const routes: Routes = [
 
-  {path:'', component: AdminComponent},
+  {path:'', component: AdminComponent,
+  children: [
+    {
+      path: 'category',
+      loadChildren: () => import("./category/category.module").then((m) => m.CategoryModule)
+
+    }
+  ]
+  },
   { path: 'dashboard', component: DashboardComponent },
 
 ];
