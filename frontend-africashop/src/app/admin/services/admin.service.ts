@@ -19,6 +19,12 @@ export class AdminService {
     });
   }
 
+  getAllCategories():Observable<any>{
+    return this.http.get(this.BASIC_URL + 'api/admin/category', {
+      headers : this.createAuthorizationHeader()
+    });
+  }
+
 
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
