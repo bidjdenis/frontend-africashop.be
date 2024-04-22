@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Category } from '../../../../payload/category';
 import { AdminService } from '../../../services/admin.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ListCategoryComponent implements OnInit {
 
+  @Output() categoryEmitted: EventEmitter<any> =   new EventEmitter();
   category : Category[] = [];
 
   constructor(private adminService : AdminService, private snackbar : MatSnackBar){}
@@ -33,5 +34,9 @@ export class ListCategoryComponent implements OnInit {
         this.snackbar.open('deletion successful', 'close', {duration: 5000})
       })
     }
+  }
+
+  onUpdate = (category: Category) => {
+    this.categoryEmitted.emit(category);
   }
 }

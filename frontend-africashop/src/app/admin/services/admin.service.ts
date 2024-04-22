@@ -31,6 +31,12 @@ export class AdminService {
     });
   }
 
+  updateCategory(data: any, id: number): Observable<any> {
+    return this.http.put(this.BASIC_URL + `api/admin/category/update/${id}`, data, {
+      headers : this.createAuthorizationHeader()
+     });
+  }
+
 
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
