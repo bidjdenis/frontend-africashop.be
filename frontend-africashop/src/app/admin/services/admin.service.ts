@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Category } from '../../payload/category';
 import { StorageService } from '../../services/storage/storage.service';
 import { Observable } from 'rxjs';
+import { Country } from '../../payload/country';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,18 @@ export class AdminService {
      });
   }
 
+
+  createCountry(data:any):Observable<any>{
+    return this.http.post(this.BASIC_URL +'api/admin/addCountry', data, {
+      headers : this.createAuthorizationHeader()
+    });
+  }
+
+  getAllCountries():Observable<any>{
+    return this.http.get(this.BASIC_URL + 'api/admin/countries', {
+      headers : this.createAuthorizationHeader()
+    });
+  }
 
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(

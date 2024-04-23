@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from '../../../services/admin.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Category } from '../../../../payload/category';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class EditCategoryComponent implements OnInit{
 
   
-  @Input() category: any;
+  @Input() category!: Category;
   categoryForm!: FormGroup;
   submitted: boolean = false;
   
@@ -55,7 +56,7 @@ export class EditCategoryComponent implements OnInit{
 }
 
 
-  setCategory = (c:any) => { 
+  setCategory = (c:Category) => { 
    this.f.name.setValue(c.name);
    
   }
