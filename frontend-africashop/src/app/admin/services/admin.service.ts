@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Category } from '../../payload/category';
 import { StorageService } from '../../services/storage/storage.service';
 import { Observable } from 'rxjs';
-import { Country } from '../../payload/country';
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +52,12 @@ export class AdminService {
 
   deleteCountry(id:number): Observable<any>{
     return this.http.delete(this.BASIC_URL +`api/admin/deleteCountry/${id}`, {
+      headers : this.createAuthorizationHeader()
+    });
+  }
+
+  createProduct(data:any):Observable<any>{
+    return this.http.post(this.BASIC_URL + "api/admin/createProduct", data, {
       headers : this.createAuthorizationHeader()
     });
   }

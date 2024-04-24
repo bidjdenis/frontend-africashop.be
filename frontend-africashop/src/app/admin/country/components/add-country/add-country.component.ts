@@ -50,7 +50,7 @@ export class AddCountryComponent implements OnInit {
       formData.append('name', this.countryForm.controls['name'].value);
 
       this.adminService.createCountry(formData).subscribe(res => {
-        this.snackbar.open('Country create successfully', 'close',{duration: 2000})
+        this.snackbar.open('Country create successfully', 'close',{duration: 4000})
         window.location.reload();
       }, err => {console.log(err)
       })
