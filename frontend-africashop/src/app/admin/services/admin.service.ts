@@ -51,6 +51,12 @@ export class AdminService {
     });
   }
 
+  deleteCountry(id:number): Observable<any>{
+    return this.http.delete(this.BASIC_URL +`api/admin/deleteCountry/${id}`, {
+      headers : this.createAuthorizationHeader()
+    });
+  }
+
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + StorageService.getToken()

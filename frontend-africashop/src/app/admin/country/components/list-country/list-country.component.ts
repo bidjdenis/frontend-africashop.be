@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../../services/admin.service';
 import { Country } from '../../../../payload/country';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-list-country',
@@ -10,8 +11,8 @@ import { Country } from '../../../../payload/country';
 export class ListCountryComponent implements OnInit{
 
   countries : any[] = []
-  
-  constructor(private adminService : AdminService){}
+
+  constructor(private adminService : AdminService, private snackbar : MatSnackBar){}
 
   ngOnInit(): void {
     this.getAllCountry();
@@ -27,6 +28,16 @@ export class ListCountryComponent implements OnInit{
       });
       console.log(this.countries)
     })
+  }
+
+  onDelete(id:number){
+    if(confirm('Are you sure for suppression?')){
+      this.adminService.deleteCountry(id).subscribe(res => {
+        this.snackbar.open('Deletion of country', 'close', {duration: 5000})
+        window.location.reload();
+      })
+
+    }
   }
   
 

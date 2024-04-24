@@ -43,6 +43,7 @@ export class EditCategoryComponent implements OnInit{
             .subscribe(response => {
               console.log(response)
                 this.categoryForm.reset();
+                window.location.reload();
                 this.snackbar.open('Category updated successfully', 'Close', {
                     duration: 2000,
                 });

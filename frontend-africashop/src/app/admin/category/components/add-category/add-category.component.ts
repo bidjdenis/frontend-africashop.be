@@ -34,7 +34,7 @@ export class AddCategoryComponent implements OnInit{
     else{
       this.adminService.saveCategory(this.categoryForm.value).subscribe(res => {
 	    this.snackbar.open('Add successfully', 'close', {duration: 5000});
-        this.router.navigateByUrl('/admin/dashboard')
+      window.location.reload();
       })
       
     }

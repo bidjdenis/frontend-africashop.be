@@ -28,7 +28,7 @@
                 <div class="form-group">
                     <label for="country"></label>
                     <input [ngClass]="{'is-invalid': submitted && f.name.errors}" formControlName="name"
-                        class="form-control" type="text" placeholder="Nom de la catégorie">
+                        class="form-control" type="text" placeholder="Country name">
                     <div *ngIf="f.name.errors" class="invalid-feedback">
                         <div>
                             <i>Required name</i>

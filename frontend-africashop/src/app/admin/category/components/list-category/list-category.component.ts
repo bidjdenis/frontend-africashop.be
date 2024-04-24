@@ -31,7 +31,8 @@ export class ListCategoryComponent implements OnInit {
   onDelete(id : number){
     if(confirm('Are you sure for suppression')){
       this.adminService.deleteCategory(id).subscribe(res => {
-        this.snackbar.open('deletion successful', 'close', {duration: 5000})
+        this.snackbar.open('deletion successful', 'close', {duration: 5000});
+        window.location.reload();
       })
     }
   }

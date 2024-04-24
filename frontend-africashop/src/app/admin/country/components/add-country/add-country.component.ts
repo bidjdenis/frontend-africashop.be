@@ -51,7 +51,7 @@ export class AddCountryComponent implements OnInit {
 
       this.adminService.createCountry(formData).subscribe(res => {
         this.snackbar.open('Country create successfully', 'close',{duration: 2000})
-        this.router.navigateByUrl('/admin/dashboard');
+        window.location.reload();
       }, err => {console.log(err)
       })
     }
