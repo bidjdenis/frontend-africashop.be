@@ -68,6 +68,24 @@ export class AdminService {
     });
   }
 
+  deleteProduct(id:number):Observable<any>{
+    return this.http.delete(this.BASIC_URL + `api/admin/product/${id}`, {
+      headers: this.createAuthorizationHeader()
+    });
+  }
+
+  getProductById(id:number):Observable<any>{
+    return this.http.get(this.BASIC_URL + `api/admin/get/product/${id}`, {
+      headers : this.createAuthorizationHeader()
+    });
+  }
+
+  updateProduct(id:any, data: any):Observable<any>{
+    return this.http.put(this.BASIC_URL + `api/admin/product/update/${id}`, data, {
+      headers: this.createAuthorizationHeader()
+    });
+  }
+
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + StorageService.getToken()
