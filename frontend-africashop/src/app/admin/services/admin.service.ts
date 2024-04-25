@@ -62,6 +62,12 @@ export class AdminService {
     });
   }
 
+  getAllProduct():Observable<any>{
+    return this.http.get(this.BASIC_URL + "api/admin/products", {
+      headers : this.createAuthorizationHeader()
+    });
+  }
+
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + StorageService.getToken()

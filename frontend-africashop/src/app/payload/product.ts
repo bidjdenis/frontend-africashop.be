@@ -10,5 +10,14 @@ export class Product {
 
     weight! : string;
 
-    img! : string
+    img! : string;
+
+    processedImg! : String;
+
+    byteImg! :string;
+
+    categoryName! : string;
+
+    countryName! : string;
+
 }

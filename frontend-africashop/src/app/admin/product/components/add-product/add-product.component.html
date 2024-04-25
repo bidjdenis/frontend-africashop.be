@@ -49,7 +49,7 @@
                 <div class="form-group">
                     <label for="name">Weight</label>
                     <input [ngClass]="{'is-invalid': submitted && f.weight.errors}" formControlName="weight"
-                        class="form-control" type="text" placeholder="Product weight">
+                        class="form-control" type="text" placeholder="product weight">
                     <div *ngIf="f.weight.errors" class="invalid-feedback">
                         <div>
                             <i>Required weight</i>
@@ -78,7 +78,7 @@
                 <div class="form-group">
                     <label for="name">Description</label>
                     <input [ngClass]="{'is-invalid': submitted && f.description.errors}" formControlName="description"
-                        class="form-control" type="text" placeholder="Product description">
+                        class="form-control" type="text" placeholder="product description">
                     <div *ngIf="f.description.errors" class="invalid-feedback">
                         <div>
                             <i>Required description</i>
