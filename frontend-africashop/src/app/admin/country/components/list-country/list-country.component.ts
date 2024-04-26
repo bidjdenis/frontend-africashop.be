@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AdminService } from '../../../services/admin.service';
 import { Country } from '../../../../payload/country';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -10,7 +10,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ListCountryComponent implements OnInit{
 
-  countries : any[] = []
+  public countries : Country[] = [];
+  @Output() countryEmitted: EventEmitter<any> =   new EventEmitter();
 
   constructor(private adminService : AdminService, private snackbar : MatSnackBar){}
 
@@ -22,10 +23,10 @@ export class ListCountryComponent implements OnInit{
 
     this.countries = [];
     this.adminService.getAllCountries().subscribe(res =>{
-      res.forEach((element: { processedImg: string; byteImg: string; }) => {
-        element.processedImg = 'data:image/jpeg;base64,' + element.byteImg;
-        this.countries.push(element);
-      });
+      res.forEach((country : Country) => {
+        country.processedImg = 'data:image/jpeg;base64,' + country.byteImg;
+        this.countries.push(country);
+      })
       console.log(this.countries)
     })
   }
@@ -38,6 +39,10 @@ export class ListCountryComponent implements OnInit{
       })
 
     }
+  }
+
+  onUpdate(country : Country){
+    this.countryEmitted.emit(country);
   }
   
 

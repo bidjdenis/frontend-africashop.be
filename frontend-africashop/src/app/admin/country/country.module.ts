@@ -6,13 +6,15 @@ import { CountryComponent } from './country.component';
 import { AddCountryComponent } from './components/add-country/add-country.component';
 import { ListCountryComponent } from './components/list-country/list-country.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditCountryComponent } from './components/edit-country/edit-country.component';
 
 
 @NgModule({
   declarations: [
     CountryComponent,
     AddCountryComponent,
-    ListCountryComponent
+    ListCountryComponent,
+    EditCountryComponent
   ],
   imports: [
     CommonModule,

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Category } from '../../payload/category';
 import { StorageService } from '../../services/storage/storage.service';
 import { Observable } from 'rxjs';
+import { Country } from '../../payload/country';
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +57,12 @@ export class AdminService {
     });
   }
 
+  updateCountry(id:any, data : any): Observable<any>{
+    return this.http.put(this.BASIC_URL + `api/admin/country/update/${id}`, data, {
+      headers : this.createAuthorizationHeader()
+    });
+  }
+
   createProduct(data:any):Observable<any>{
     return this.http.post(this.BASIC_URL + "api/admin/createProduct", data, {
       headers : this.createAuthorizationHeader()
@@ -85,6 +92,8 @@ export class AdminService {
       headers: this.createAuthorizationHeader()
     });
   }
+
+
 
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(

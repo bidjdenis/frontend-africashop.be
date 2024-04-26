@@ -23,7 +23,7 @@ export class ListProductComponent implements OnInit{
   getProducts(){
     this.products = [];
     this.adminService.getAllProduct().subscribe(res=> {
-      res.forEach((product: any) => {
+      res.forEach((product: Product) => {
         product.processedImg = 'data:image/jpeg;base64,' + product.byteImg;
         this.products.push(product);
       });

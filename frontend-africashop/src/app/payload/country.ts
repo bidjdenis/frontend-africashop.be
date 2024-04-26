@@ -5,4 +5,8 @@ export class Country {
     name! : string;
 
     img! : string;
+
+    processedImg!: string; 
+    
+    byteImg!: string;
 }
