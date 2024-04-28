@@ -1,0 +1,32 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">code</th>
+        <th scope="col">Discount</th>
+        <th scope="col">Expiration date</th>
+        <th scope="col">Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of coupons" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+            <td> {{c.id}}</td>
+            <td> {{c.name}}</td>
+            <td> {{c.code}}</td>
+            <td> {{c.discount}} %</td>
+            <td> {{c.expirationDate  | date}} </td>
+
+            <td style="width: 20%;">
+             
+              <a  href="#" class="table-link danger">
+                  <span class="fa-stack">
+                      <i class="fa fa-square fa-stack-2x"></i>
+                      <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                  </span>
+              </a>
+          </td>
+        </tr>
+    </tbody>
+</table>   
