@@ -19,6 +19,10 @@ const routes: Routes = [
     {
       path:'product',
       loadChildren : () => import("./product/product.module").then((m)=> m.ProductModule)
+    },
+    {
+      path:'coupon',
+      loadChildren : () => import("./coupon/coupon.module").then((m) => m.CouponModule)
     }
   ]
   },

@@ -1,0 +1,13 @@
+label {
+    display: block;
+    font:
+      1rem 'Fira Sans',
+      sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  input,
+  label {
+    margin: 0.4rem 0;
+  }
+  

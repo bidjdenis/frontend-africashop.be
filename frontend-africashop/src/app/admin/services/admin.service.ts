@@ -4,6 +4,7 @@ import { Category } from '../../payload/category';
 import { StorageService } from '../../services/storage/storage.service';
 import { Observable } from 'rxjs';
 import { Country } from '../../payload/country';
+import { Coupon } from '../../payload/coupon';
 
 @Injectable({
   providedIn: 'root'
@@ -91,6 +92,18 @@ export class AdminService {
     return this.http.put(this.BASIC_URL + `api/admin/product/update/${id}`, data, {
       headers: this.createAuthorizationHeader()
     });
+  }
+
+  getAllCoupons(): Observable<any>{
+    return this.http.get(this.BASIC_URL + "api/admin/coupons", {
+      headers : this.createAuthorizationHeader()
+    });
+  }
+
+  createCoupon(data : Coupon): Observable<any>{
+    return this.http.post(this.BASIC_URL + "api/admin/createCoupon", data,{
+      headers : this.createAuthorizationHeader()
+    })
   }
 
 
