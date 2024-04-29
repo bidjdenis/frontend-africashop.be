@@ -106,7 +106,17 @@ export class AdminService {
     })
   }
 
+  deleteCoupon(id:number):Observable<any>{
+    return this.http.delete(this.BASIC_URL + `api/admin/coupon/${id}`, {
+      headers : this.createAuthorizationHeader()
+  })
+  }
 
+  updateCoupon(id:number, data : any): Observable<any>{
+    return this.http.put(this.BASIC_URL + `api/admin/coupon/update/${id}`, data, {
+      headers : this.createAuthorizationHeader()
+    });
+  }
 
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <div class="form-container mt-4">
+        <div class="border p-3 rounded" style="background-color: beige; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> 
+            <h5 class="text-center mb-4">Update coupon</h5>
+            <form [formGroup]="couponForm" (ngSubmit)="updateCoupon()">
+                
+              
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input [ngClass]="{'is-invalid': submitted && f.name.errors}" formControlName="name"
+                        class="form-control" type="text" placeholder="Coupon name">
+                    <div *ngIf="f.name.errors" class="invalid-feedback">
+                        <div>
+                            <i>Required name</i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="code">Code</label>
+                    <input [ngClass]="{'is-invalid': submitted && f.code.errors}" formControlName="code"
+                        class="form-control" type="text" placeholder="Coupon code">
+                    <div *ngIf="f.code.errors" class="invalid-feedback">
+                        <div>
+                            <i>Required code</i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="discount">Discount %</label>
+                    <input [ngClass]="{'is-invalid': submitted && f.discount.errors}" formControlName="discount"
+                        class="form-control" type="text" placeholder="% discount">
+                    <div *ngIf="f.discount.errors" class="invalid-feedback">
+                        <div>
+                            <i>Required discount</i>
+                        </div>
+                    </div>
+                </div>
+
+               <div class="form-group">
+                <label for="expirationDate">Expiration date:</label>
+                <input type="date" id="expirationDate" name="expirationDate"
+                 value="2024-02-22" min="2024-01-01" max="2024-12-31" formControlName="expirationDate"/>
+               </div>
+    
+                <div class="form-group">
+                    <button type="submit" class="btn btn-outline-success btn-block mt-2">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

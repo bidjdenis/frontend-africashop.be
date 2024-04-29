@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AdminService } from '../../../services/admin.service';
 import { Coupon } from '../../../../payload/coupon';
 
@@ -11,6 +11,8 @@ export class ListCouponComponent implements OnInit{
 
   public coupons : Coupon[] = [];
 
+  @Output() couponEmitted : EventEmitter<any> = new EventEmitter();
+
   constructor(private adminService : AdminService){}
 
   ngOnInit(): void {
@@ -22,6 +24,18 @@ export class ListCouponComponent implements OnInit{
     this.adminService.getAllCoupons().subscribe(res => {
       this.coupons.push(...res)
     })
+  }
+
+  onDelete(id:number){
+    if(confirm("Are you sure for suppression?")){
+      this.adminService.deleteCoupon(id).subscribe(res => {
+        window.location.reload();
+      })
+    }
+  }
+
+  onUpdate(coupon : Coupon){
+    this.couponEmitted.emit(coupon);
   }
 
 }
