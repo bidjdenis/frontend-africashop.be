@@ -1,0 +1,45 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+<div class="row">
+	<div class="col-lg-12" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+		<div class="main-box clearfix">
+			<div class="table-responsive">
+				<table class="table user-list">
+					<thead>
+						<tr>
+							<th><span>User</span></th>
+							<th><span>Email</span></th>
+                            <th><span>Action</span></th>
+
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr *ngFor="let u of users">
+							<td>
+								<img src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                                alt="">
+								<a href="#" class="user-link">{{u.name}}</a>
+								<span class="user-subhead">{{u.role}}</span>
+							</td>
+							
+							<td>
+								<a href="#">{{u.email}}</a>
+							</td>
+                                <td>
+								<a  (click)="onDelete(u.id)" class="table-link danger">
+									<span class="fa-stack">
+										<i class="fa fa-square fa-stack-2x"></i>
+										<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+									</span>
+								</a>
+                            </td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+		</div>
+	</div>
+</div>
+</div>

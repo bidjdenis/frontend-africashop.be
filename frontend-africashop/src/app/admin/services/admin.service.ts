@@ -118,6 +118,18 @@ export class AdminService {
     });
   }
 
+  getAllUsers(): Observable<any>{
+    return this.http.get(this.BASIC_URL + "api/admin/users", {
+      headers : this.createAuthorizationHeader()
+    });
+  }
+
+  deleteUser(id:number): Observable<any>{
+    return this.http.delete(this.BASIC_URL + `api/admin/user/${id}`, {
+      headers : this.createAuthorizationHeader()
+    });
+  }
+
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + StorageService.getToken()
