@@ -59,13 +59,18 @@
                         <a class="nav-link" routerLink="" ><i class="fa fa-home" style="font-size:20px"></i> Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i class="fa fa-flag-o" style="font-size:20px"></i> Countries
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          
-                      </div>
-                  </li>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-flag-o" style="font-size:20px"></i> Countries
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <ng-container *ngFor="let c of countries">
+                                <div class="dropdown-item"[routerLink]="['/member/country-product/', c.id]">
+                                    <img [src]="c.processedImg" alt="Country Image" class="country-image">
+                                    <span class="country-name">{{c.name}}</span>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </li>
                   
                     <li class="nav-item">
                       <a class="nav-link" href="#">
@@ -150,7 +155,12 @@
                             <i class="fa fa-flag-o" style="font-size:20px"></i> Countries
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            
+                            <ng-container *ngFor="let c of countries">
+                                <div class="dropdown-item"[routerLink]="['/member/country-product/', c.id]">
+                                    <img [src]="c.processedImg" alt="Country Image" class="country-image">
+                                    <span class="country-name">{{c.name}}</span>
+                                </div>
+                            </ng-container>
                         </div>
                     </li>
                     

@@ -34,7 +34,8 @@ export class DashboardComponent implements OnInit{
   getProducts(){
     this.listeOfProducts = [];
     this.memberService.getAllProducts().subscribe(res => {
-      res.forEach((product : Product) => {product.processedImg = "data:image/jpeg;base64," + product.byteImg;
+      res.forEach((product : Product) => {product.processedImg = "data:image/jpeg;base64," 
+      + product.byteImg;
         this.listeOfProducts.push(product)
         this.applySearchFilter(); 
       }
