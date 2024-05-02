@@ -6,12 +6,14 @@ import { MemberComponent } from './member.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CountryProductComponent } from './components/country-product/country-product.component';
 
 
 @NgModule({
   declarations: [
     MemberComponent,
-    DashboardComponent
+    DashboardComponent,
+    CountryProductComponent
   ],
   imports: [
     CommonModule,
