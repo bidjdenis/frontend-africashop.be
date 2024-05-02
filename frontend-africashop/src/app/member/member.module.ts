@@ -5,6 +5,7 @@ import { MemberRoutingModule } from './member-routing.module';
 import { MemberComponent } from './member.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     MemberRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class MemberModule { }

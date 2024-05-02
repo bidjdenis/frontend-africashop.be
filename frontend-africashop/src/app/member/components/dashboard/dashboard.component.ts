@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../../services/member.service';
 import { Category } from '../../../payload/category';
+import { Product } from '../../../payload/product';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,14 +10,17 @@ import { Category } from '../../../payload/category';
 })
 export class DashboardComponent implements OnInit{
 
-  public products : any[] = [];
   public listeOfCategories : Category[] = [];
-  messageVisible = false;
+  public listeOfProducts : Product[] = [];
+  public filteredProducts: Product[] = [];
+  public searchKeyword: string = '';
+
 
   constructor(private memberService : MemberService){}
 
   ngOnInit(): void {
     this.getAllCategories();
+    this.getProducts();
    
   }
 
@@ -25,6 +29,32 @@ export class DashboardComponent implements OnInit{
     this.memberService.getCategories().subscribe(res => {
       this.listeOfCategories.push(...res);
     })
+  }
+
+  getProducts(){
+    this.listeOfProducts = [];
+    this.memberService.getAllProducts().subscribe(res => {
+      res.forEach((product : Product) => {product.processedImg = "data:image/jpeg;base64," + product.byteImg;
+        this.listeOfProducts.push(product)
+        this.applySearchFilter(); 
+      }
+      )
+      
+    })
+  }
+
+  applySearchFilter(): void {
+    if (this.searchKeyword.trim() !== '') {
+      this.filteredProducts = this.listeOfProducts.filter((product: Product) =>
+        product.name.toLowerCase().includes(this.searchKeyword.toLowerCase()),
+      );
+    } else {
+      this.filteredProducts = this.listeOfProducts;
+    }
+  }
+
+  onSearchChange(): void {
+    console.log(this.applySearchFilter()); 
   }
 
   
