@@ -31,6 +31,12 @@ export class MemberService {
     })
   }
 
+  getProductByCategory(id : number) : Observable<any>{
+    return this.http.get(this.BASIC_URL + `api/member/categorie/${id}` , {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
 
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(

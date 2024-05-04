@@ -7,13 +7,15 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CountryProductComponent } from './components/country-product/country-product.component';
+import { CategoryProductComponent } from './components/category-product/category-product.component';
 
 
 @NgModule({
   declarations: [
     MemberComponent,
     DashboardComponent,
-    CountryProductComponent
+    CountryProductComponent,
+    CategoryProductComponent
   ],
   imports: [
     CommonModule,
