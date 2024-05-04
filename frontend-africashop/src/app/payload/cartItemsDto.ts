@@ -13,5 +13,7 @@ export class CartItemsDto {
 
     userId! : number;
 
+    processedImg!: string; 
+
     returnedImg! : string;
 }

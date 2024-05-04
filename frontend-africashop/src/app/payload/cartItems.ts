@@ -12,4 +12,10 @@ export class CartItems {
     product! : Product;
 
     user! : User;
+    
+    productName! : string;
+
+    processedImg!: string; 
+    
+    returnedImg!: string;
 }
