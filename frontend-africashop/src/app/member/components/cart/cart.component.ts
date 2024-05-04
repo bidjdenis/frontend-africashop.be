@@ -37,6 +37,12 @@ export class CartComponent implements OnInit{
     })
   }
 
+  decreaseQuantity(productId: any){
+    this.memberService.decreaseProductQuantity(productId).subscribe(res =>{
+      this.getCart();
+    })
+  }
+
   calculateTotalAmount(): number {
     let total = 0;
     for(let c of this.cartItems){

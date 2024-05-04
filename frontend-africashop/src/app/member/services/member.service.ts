@@ -65,6 +65,16 @@ export class MemberService {
     })
   }
 
+  decreaseProductQuantity(productId:any): Observable<any>{
+    const cartDto = {
+      productId : productId,
+      userId: StorageService.getUserId()
+    }
+    return this.http.post(this.BASIC_URL + `api/member/deduction`, cartDto , {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + StorageService.getToken()
