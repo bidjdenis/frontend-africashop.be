@@ -80,13 +80,13 @@
                                             <span class="btn btn1" *ngIf="c.quantity !== 1"><i class="fa fa-minus"></i></span>
                                             <input type="text" value="{{c.quantity}}" class="input-quantity" />
 
-                                            <span class="btn btn1"><i class="fa fa-plus"></i></span>
+                                            <span class="btn btn1"  (click)="increaseQuantity(c.productId)"><i class="fa fa-plus"></i></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-2 col-5 my-auto">
-                                    <div class="remove" >
-                                        <a  class="btn btn-danger btn-sm"  >
+                                    <div class="remove" style="color: white;">
+                                        <a  class="btn btn-danger btn-sm">
                                             <i class="fa fa-trash"></i> Remove
                                         </a>
                                     </div>

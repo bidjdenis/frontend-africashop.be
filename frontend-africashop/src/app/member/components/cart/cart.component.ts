@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../../services/member.service';
 import { CartItems } from '../../../payload/cartItems';
+import { CartItemsDto } from '../../../payload/cartItemsDto';
 
 @Component({
   selector: 'app-cart',
@@ -9,7 +10,7 @@ import { CartItems } from '../../../payload/cartItems';
 })
 export class CartComponent implements OnInit{
 
-  cartItems : CartItems[] = [];
+  cartItems : CartItemsDto[] = [];
   public quantity : number | undefined
 
 
@@ -22,11 +23,17 @@ export class CartComponent implements OnInit{
   getCart(){
     this.cartItems = [];
     this.memberService.getCartItems().subscribe(res => {
-      res.forEach((cart : CartItems) => {cart.processedImg ="data:image/jpeg;base64, " + cart.returnedImg;
+      res.forEach((cart : CartItemsDto) => {cart.processedImg ="data:image/jpeg;base64, " + cart.returnedImg;
       this.cartItems.push(cart);
       this.quantity = this.cartItems.length;
 
       })
+    })
+  }
+
+  increaseQuantity(productId: any){
+    this.memberService.increaseProductQuantity(productId).subscribe(res =>{
+      this.getCart();
     })
   }
 
