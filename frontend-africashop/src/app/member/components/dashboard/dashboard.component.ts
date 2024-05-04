@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../../services/member.service';
 import { Category } from '../../../payload/category';
 import { Product } from '../../../payload/product';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ProductCart } from '../../../payload/productCart';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +18,7 @@ export class DashboardComponent implements OnInit{
   public searchKeyword: string = '';
 
 
-  constructor(private memberService : MemberService){}
+  constructor(private memberService : MemberService, private snackBar : MatSnackBar){}
 
   ngOnInit(): void {
     this.getAllCategories();
@@ -28,6 +30,12 @@ export class DashboardComponent implements OnInit{
     this.listeOfCategories = [];
     this.memberService.getCategories().subscribe(res => {
       this.listeOfCategories.push(...res);
+    })
+  }
+
+  addProductToCart(productId : any){
+    this.memberService.addTocart(productId).subscribe(res => {
+      this.snackBar.open('Product added successfuly', 'close', {duration : 5000});
     })
   }
 

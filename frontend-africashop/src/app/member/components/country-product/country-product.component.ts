@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../../services/member.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../../payload/product';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-country-product',
@@ -15,7 +16,7 @@ export class CountryProductComponent implements OnInit{
   public filteredProducts: Product[] = [];
   public searchKeyword: string = '';
 
-  constructor(private memberService : MemberService, private activatedRoute : ActivatedRoute){}
+  constructor(private memberService : MemberService, private activatedRoute : ActivatedRoute, private snackbar : MatSnackBar){}
 
   ngOnInit(): void {
 
@@ -32,6 +33,12 @@ export class CountryProductComponent implements OnInit{
         this.applySearchFilter();
         })
        })
+  }
+
+  addProductToCart(productId : any){
+    this.memberService.addTocart(productId).subscribe(res => {
+      this.snackbar.open('Product added successfuly', 'close', {duration : 5000});
+    })
   }
 
   applySearchFilter(): void {
