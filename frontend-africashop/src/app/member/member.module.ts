@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CountryProductComponent } from './components/country-product/country-product.component';
 import { CategoryProductComponent } from './components/category-product/category-product.component';
 import { CartComponent } from './components/cart/cart.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { CartComponent } from './components/cart/cart.component';
     CountryProductComponent,
     CategoryProductComponent,
     CartComponent,
+    WishlistComponent,
   ],
   imports: [
     CommonModule,

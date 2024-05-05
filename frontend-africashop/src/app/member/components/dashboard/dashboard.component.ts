@@ -52,6 +52,14 @@ export class DashboardComponent implements OnInit{
     })
   }
 
+  addToWishlist(id:any){
+    this.memberService.addToWishList(id).subscribe(res =>{
+      console.log(res);
+      
+    });
+  
+}
+
   applySearchFilter(): void {
     if (this.searchKeyword.trim() !== '') {
       this.filteredProducts = this.listeOfProducts.filter((product: Product) =>
