@@ -16,8 +16,12 @@ export class Product {
 
     byteImg! :string;
 
+    returnedImg!: string;
+
     categoryName! : string;
 
     countryName! : string;
+
+    productName! : string;
 
 }

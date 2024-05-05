@@ -54,8 +54,7 @@ export class DashboardComponent implements OnInit{
 
   addToWishlist(id:any){
     this.memberService.addToWishList(id).subscribe(res =>{
-      console.log(res);
-      
+      this.snackBar.open('Product added successfuly', 'close', {duration : 5000});      
     });
   
 }

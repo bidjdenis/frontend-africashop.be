@@ -85,6 +85,13 @@ export class MemberService {
     })
   }
 
+  getWishListByUserId(): Observable<any>{
+    const userId = StorageService.getUserId()
+    return this.http.get(this.BASIC_URL + `api/member/wishlist/${userId}` , {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + StorageService.getToken()
