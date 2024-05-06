@@ -61,7 +61,7 @@
 	                                </td>
 					        		<td width="15%" class="price">{{p.price}} €</td>
 					        		<td width="15%"><span class="in-stock-box">{{p.categoryName}}</span></td>
-					        		<td width="15%" ><button class="round-black-btn small-btn" >Add to Cart</button></td>
+					        		<td width="15%" ><button class="round-black-btn small-btn" (click)="addProductToCart(p.productId)" >Add to Cart</button></td>
                                     <td width="15%" ><button class="round-black-btn small-btn" >Remove</button></td>
 					        	</tr>
 					        	
