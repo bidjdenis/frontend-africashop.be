@@ -75,7 +75,7 @@ export class MemberService {
     })
   }
 
-  removeCartItem(productId : any): Observable<any> {
+  removeCartItem(productId : number): Observable<any> {
     return this.http.delete(this.BASIC_URL + `api/member/remove/${productId}`,{
       headers: this.createAuthorizationHeader(),
     });
@@ -97,6 +97,13 @@ export class MemberService {
     return this.http.get(this.BASIC_URL + `api/member/wishlist/${userId}` , {
       headers: this.createAuthorizationHeader(),
     })
+  }
+
+  removeWishlistItem(id: number): Observable<any> {
+    return this.http.delete(this.BASIC_URL + `api/member/remove/wishlist/${id}`,{
+      headers: this.createAuthorizationHeader(),
+    });
+
   }
 
   private createAuthorizationHeader(): HttpHeaders{
