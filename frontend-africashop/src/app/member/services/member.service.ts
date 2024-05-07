@@ -75,6 +75,13 @@ export class MemberService {
     })
   }
 
+  removeCartItem(productId : any): Observable<any> {
+    return this.http.delete(this.BASIC_URL + `api/member/remove/${productId}`,{
+      headers: this.createAuthorizationHeader(),
+    });
+
+  }
+
   addToWishList(productId:any): Observable<any>{
     const cartDto = {
       productId : productId,

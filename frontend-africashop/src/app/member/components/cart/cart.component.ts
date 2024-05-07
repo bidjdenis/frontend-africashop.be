@@ -37,6 +37,12 @@ export class CartComponent implements OnInit{
     })
   }
 
+  removeItem(productId: any) {
+    this.memberService.removeCartItem(productId).subscribe(res => {
+      this.getCart();
+    });
+  }
+
   decreaseQuantity(productId: any){
     this.memberService.decreaseProductQuantity(productId).subscribe(res =>{
       this.getCart();
