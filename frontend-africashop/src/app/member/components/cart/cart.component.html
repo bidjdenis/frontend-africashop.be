@@ -4,43 +4,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Africashop</title>
-
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+    <div class="container-fluid  mt-100" *ngIf="!cartItems || cartItems.length === 0" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+        <div class="row">
 
+           <div class="col-md-12">
+               <div class="card mt-3">
+               <div class="card-header">
+               </div>
+               <div class="card-body cart">
+                       <div class="col-sm-12 empty-cart-cls text-center">
+                           <img src="assets/img/cartEmpty.jpg" width="300" height="300" class="img-fluid mb-4 mr-3">
+                           <h3><strong>Your Cart is Empty</strong></h3>
+                           <h4>Add something to make me happy :)</h4>
+                           <a routerLink="/member/dashboard" class="btn btn-primary cart-btn-transform m-3" data-abc="true">continue shopping</a>
+                       </div>
+               </div>
+       </div>     
+           
+           </div>
+        
+        </div>
+       
+       </div>
     
     <div class="py-3 py-md-5 bg-light" *ngIf="cartItems && cartItems.length > 0" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
         <div class="container" >
-            <div class="container-fluid  mt-100" *ngIf="!cartItems || cartItems.length === 0" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
-                <div class="row">
-                
-                   <div class="col-md-12">
-                   
-                           <div class="card mt-3">
-                       <div class="card-header">
-                       </div>
-                       <div class="card-body cart">
-                               <div class="col-sm-12 empty-cart-cls text-center">
-                                   <img src="assets/img/cartEmpty.jpg" width="300" height="300" class="img-fluid mb-4 mr-3">
-                                   <h3><strong>Your Cart is Empty</strong></h3>
-                                   <h4>Add something to make me happy :)</h4>
-                                   <a href="#" class="btn btn-primary cart-btn-transform m-3" data-abc="true">continue shopping</a>
-                                   
-                               
-                               </div>
-                       </div>
-               </div>
-                       
-                   
-                   </div>
-                
-                </div>
-               
-               </div>
-            
-           
             <div class="row">
                 <div class="col-md-12">
                     <div class="shopping-cart" >
@@ -65,9 +57,9 @@
                         <div class="cart-item" *ngFor="let c of cartItems" >
                             <div class="row">
                                 <div class="col-md-6 my-auto">
-                                    <a href="" >
+                                    <a style=" color: blue;">
                                         <label class="product-name">
-                                            <img [src]="c.processedImg"  alt="product-image" style="width: 50px; height: 50px" alt="">
+                                            <img [src]="c.processedImg"  alt="product-image" style="width: 50px; height: 50px;" alt="">
                                             {{c.productName}}
                                         </label>
                                     </a>
