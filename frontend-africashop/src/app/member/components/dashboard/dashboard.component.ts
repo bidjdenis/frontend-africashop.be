@@ -82,7 +82,7 @@ export class DashboardComponent implements OnInit{
       image: 'assets/img/home.jpg',
     },
     {
-      image: 'assets/img/home2.jpg',
+      image: 'assets/img/home1.jpg',
     },
     {
       image: 'assets/img/home3.jpg',

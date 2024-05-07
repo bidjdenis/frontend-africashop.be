@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit{
     this.submitted = true;
 
     const password = this.signupForm.get('password')?.value
-    const confirmPassword = this.signupForm.get(' confirmPassword')?.value
+    const confirmPassword = this.signupForm.get('confirmPassword')?.value
 
     if(password !== confirmPassword){
       this.snackBar.open('Passwords do not match.', 'Close', { duration: 5000, panelClass: 'error-snackbar' });
