@@ -43,6 +43,13 @@ export class CategoryProductComponent implements OnInit{
     })
   }
 
+  addToWishlist(id:any){
+    this.memberService.addToWishList(id).subscribe(res =>{
+      this.snackbar.open('Product added successfuly', 'close', {duration : 5000});      
+    });
+  
+}
+
   applySearchFilter(): void {
     if (this.searchKeyword.trim() !== '') {
       this.filteredProducts = this.products.filter((product: Product) =>
