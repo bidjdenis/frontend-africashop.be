@@ -32,7 +32,7 @@
                     <div class="product-card" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
                         <div class="product-card-img">
                             <label class="stock bg-success">{{p.countryName}}</label>
-                            <img [src]="p.processedImg" alt="product-image">
+                            <img [routerLink]="['/member/product-detail/',p.id]" [src]="p.processedImg" alt="product-image">
                         </div>
                         <div class="product-card-body">
                             <p class="product-brand">{{p.categoryName}}</p>
@@ -51,7 +51,7 @@
                             <div class="mt-2">
                                 <a  class="btn btn1 btn btn-primary " (click)="addProductToCart(p.id)" ><i   class="fa fa-shopping-cart" style="font-size:15px"></i></a>
                                 <a  class="btn btn1 btn btn-danger" (click)="addToWishlist(p.id)"> <i class="fa fa-heart" style="font-size:15px"></i> </a>
-                                <a class="btn btn1"  >
+                                <a class="btn btn1" [routerLink]="['/member/product-detail/',p.id]"  >
                                   <i class="fa fa-eye" style="font-size:15px"></i>
                                 </a>
                                 
