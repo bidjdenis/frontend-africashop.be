@@ -106,6 +106,12 @@ export class MemberService {
 
   }
 
+  getProductById(id : number): Observable<any>{
+    return this.http.get(this.BASIC_URL + `api/member/product/${id}`, {
+      headers : this.createAuthorizationHeader()
+    });
+  }
+
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + StorageService.getToken()
