@@ -36,4 +36,11 @@ export class ProductDetailComponent implements OnInit{
     })
   }
 
+  addToWishlist(id:number){
+    this.memberService.addToWishList(id).subscribe(res => {
+    this.snackbar.open('Product added successfuly', 'close', {duration : 5000});
+      this.router.navigateByUrl('/member/wishlist')
+    })
+  }
+
 }
