@@ -73,6 +73,31 @@ export class DashboardComponent implements OnInit{
     console.log(this.applySearchFilter()); 
   }
 
+  sortProductsByPrice(ascending: boolean): void {
+    this.memberService.sortProductsByPrice(ascending).subscribe(res => {
+      res.forEach((product : Product) => product.processedImg="data:image/jpeg;base64, " + product.byteImg)
+      this.listeOfProducts = res;
+      this.applySearchFilter(); 
+    });
+  }
+
+  onSortChange(event: any): void {
+    const sortOption = event.target.value;
+    switch (sortOption) {
+      case 'low-to-high':
+        this.sortProductsByPrice(true);
+        break;
+      case 'high-to-low':
+        this.sortProductsByPrice(false);
+        break;
+      default:
+        this.getProducts();
+        break;
+    }
+  }
+  
+  
+  
   
 
  

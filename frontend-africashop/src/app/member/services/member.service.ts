@@ -111,7 +111,12 @@ export class MemberService {
       headers : this.createAuthorizationHeader()
     });
   }
-
+ 
+  sortProductsByPrice(ascending: boolean): Observable<any> {
+    return this.http.get(this.BASIC_URL + `api/member/products/sort?ascending=${ascending}`, {
+      headers: this.createAuthorizationHeader()
+    });
+  }
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + StorageService.getToken()

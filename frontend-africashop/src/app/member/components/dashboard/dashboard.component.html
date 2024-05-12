@@ -59,15 +59,14 @@
             <form role="search" class="mt-4">
                 <div class="input-group">
                     <span>
-                        <div class="sort-options" style="margin-right: 15px; margin-top: 5px;">
-                            <label for="sort-select">Sort by :</label>
-                            &nbsp;
-                            <select id="sort-select">
-                                <option value="default">Default</option>
-                                <option value="low-to-high">Low to High</option>
-                                <option value="high-to-low">High to Low</option>
+                        <div class="sort-options"  style="margin-right: 15px; margin-top: 5px;">
+                            <label for="sort-select">Sort by:</label>
+                            <select id="sort-select" (change)="onSortChange($event)">
+                              <option value="default">Default</option>
+                              <option value="low-to-high">Low to High</option>
+                              <option value="high-to-low">High to Low</option>
                             </select>
-                        </div>
+                          </div>                          
                     </span>
                     <input type="text" name="search" [(ngModel)]="searchKeyword" placeholder="Search products..." (ngModelChange)="onSearchChange()" class="form-control" style="border-top-right-radius: 0; border-bottom-right-radius: 0;"/>
                     <div class="input-group-append">
