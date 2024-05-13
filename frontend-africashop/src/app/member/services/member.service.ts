@@ -26,6 +26,12 @@ export class MemberService {
     });
   }
 
+  getAllProductsPagination(pageNumber: number):Observable<any>{
+    return this.http.get(this.BASIC_URL + 'api/member/products/pagination?pageNumber=' + pageNumber, {
+      headers :this.createAuthorizationHeader()
+    });
+  }
+
   getProductByCountry(id : number) : Observable<any>{
     return this.http.get(this.BASIC_URL + `api/member/countrie/${id}` , {
       headers: this.createAuthorizationHeader(),

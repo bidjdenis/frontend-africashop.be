@@ -12,6 +12,8 @@ import { ProductCart } from '../../../payload/productCart';
 })
 export class DashboardComponent implements OnInit{
 
+  pageNumber : number= 0;
+  visible: boolean = false;
   public listeOfCategories : Category[] = [];
   public listeOfProducts : Product[] = [];
   public filteredProducts: Product[] = [];
@@ -41,7 +43,7 @@ export class DashboardComponent implements OnInit{
 
   getProducts(){
     this.listeOfProducts = [];
-    this.memberService.getAllProducts().subscribe(res => {
+    this.memberService.getAllProductsPagination(this.pageNumber).subscribe(res => {
       res.forEach((product : Product) => {product.processedImg = "data:image/jpeg;base64," 
       + product.byteImg;
         this.listeOfProducts.push(product)
@@ -51,6 +53,19 @@ export class DashboardComponent implements OnInit{
       
     })
   }
+
+  public loadMoreProducts(){
+    this.visible = true;
+    this.pageNumber = this.pageNumber + 1
+    this.getProducts();
+  }
+
+  public getBackProducts(){
+    this.visible = true;
+    this.pageNumber = this.pageNumber - 1
+    this.getProducts();
+  }
+  
 
   addToWishlist(id:any){
     this.memberService.addToWishList(id).subscribe(res =>{
