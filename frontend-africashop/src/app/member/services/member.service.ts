@@ -118,11 +118,12 @@ export class MemberService {
     });
   }
  
-  sortProductsByPrice(ascending: boolean): Observable<any> {
-    return this.http.get(this.BASIC_URL + `api/member/products/sort?ascending=${ascending}`, {
+  sortProductsByPrice(pageNumber: number, ascending: boolean): Observable<any> {
+    return this.http.get(`${this.BASIC_URL}api/member/products/sort?pageNumber=${pageNumber}&ascending=${ascending}`, {
       headers: this.createAuthorizationHeader()
     });
   }
+  
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + StorageService.getToken()

@@ -61,9 +61,11 @@ export class DashboardComponent implements OnInit{
   }
 
   public getBackProducts(){
-    this.visible = true;
-    this.pageNumber = this.pageNumber - 1
-    this.getProducts();
+    if (this.pageNumber > 0) {
+      this.visible = true;
+      this.pageNumber = this.pageNumber - 1;
+      this.getProducts();
+  }
   }
   
 
@@ -89,12 +91,13 @@ export class DashboardComponent implements OnInit{
   }
 
   sortProductsByPrice(ascending: boolean): void {
-    this.memberService.sortProductsByPrice(ascending).subscribe(res => {
-      res.forEach((product : Product) => product.processedImg="data:image/jpeg;base64, " + product.byteImg)
+    this.memberService.sortProductsByPrice(this.pageNumber, ascending).subscribe(res => {
+      res.forEach((product: Product) => product.processedImg = "data:image/jpeg;base64, " + product.byteImg);
       this.listeOfProducts = res;
       this.applySearchFilter(); 
     });
   }
+  
 
   onSortChange(event: any): void {
     const sortOption = event.target.value;
