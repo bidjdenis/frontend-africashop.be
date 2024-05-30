@@ -49,6 +49,12 @@ export class CartComponent implements OnInit{
     })
   }
 
+  getValidation(){
+    this.memberService.getOrderValidation().subscribe(res => {
+      //this.router.navigateByUrl('/member/checkout');
+    })
+  }
+
   calculateTotalAmount(): number {
     let total = 0;
     for(let c of this.cartItems){

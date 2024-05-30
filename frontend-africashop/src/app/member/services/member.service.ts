@@ -123,6 +123,13 @@ export class MemberService {
       headers: this.createAuthorizationHeader()
     });
   }
+
+  getOrderValidation():Observable<any>{
+    const userId = StorageService.getUserId()
+    return this.http.get(this.BASIC_URL + `api/member/order/${userId}` , {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
   
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
