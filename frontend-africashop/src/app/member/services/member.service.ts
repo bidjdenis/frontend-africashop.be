@@ -137,6 +137,13 @@ export class MemberService {
       headers: this.createAuthorizationHeader(),
     })
   }
+
+  applyCoupon(code:any): Observable<any>{
+    const userId = StorageService.getUserId()
+    return this.http.get(this.BASIC_URL + `api/member/coupon/${userId}/${code}` , {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
   
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
