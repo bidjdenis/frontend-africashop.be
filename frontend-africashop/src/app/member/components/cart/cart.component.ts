@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MemberService } from '../../services/member.service';
 import { CartItems } from '../../../payload/cartItems';
 import { CartItemsDto } from '../../../payload/cartItemsDto';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-cart',
@@ -14,7 +16,7 @@ export class CartComponent implements OnInit{
   public quantity : number | undefined
 
 
-  constructor(private memberService : MemberService){}
+  constructor(private memberService : MemberService, private router : Router, private snackbar : MatSnackBar){}
 
   ngOnInit(): void {
     this.getCart();
@@ -51,7 +53,8 @@ export class CartComponent implements OnInit{
 
   getValidation(){
     this.memberService.getOrderValidation().subscribe(res => {
-      //this.router.navigateByUrl('/member/checkout');
+      this.router.navigateByUrl('member/checkout')
+      this.snackbar.open('cart items is validated', 'close', {duration : 4000})
     })
   }
 

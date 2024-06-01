@@ -7,6 +7,7 @@ import { CategoryProductComponent } from './components/category-product/category
 import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'category-product/:id', component: CategoryProductComponent},
   {path:'cart', component: CartComponent},
   {path:"wishlist", component: WishlistComponent},
-  {path:"product-detail/:id", component : ProductDetailComponent}
+  {path:"product-detail/:id", component : ProductDetailComponent},
+  {path:"checkout", component: CheckoutComponent}
 
 ];
 
