@@ -1,1 +1,85 @@
-<p>checkout works!</p>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>Checkout </h2>
+    </div>
+    <div class="row">
+        <div class="col-md-4 order-md-2 mb-4" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Your cart</span>
+                <span class="badge badge-secondary badge-pill">{{count}}</span>
+            </h4>
+            <ul class="list-group mb-3 sticky-top" >
+                <li class="list-group-item d-flex justify-content-between lh-condensed"*ngFor="let item of cartItems">
+                    <div>
+                        <img [src]="item.processedImg"  alt="product-image" style="width: 50px; height: 50px" alt="">
+                        <small class="text-muted">{{item.productName}} | <span  class="text-danger" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Quantity : {{item.quantity}}</span>
+                        </small>
+                    </div>
+                    <span class="text-muted">{{item.price}} €</span>
+                </li>
+              
+                <li class="list-group-item d-flex justify-content-between bg-light" *ngIf="order.couponName != null">
+                    <div class="text-success">
+                        <h6 class="my-0">CODE :</h6>
+                    </div>
+                    <span class="text-success">{{ order.couponName | uppercase}} </span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Items Amount :</span>
+                    <strong>{{order.totalAmount}} €</strong>
+                </li>
+                <li class="list-group-item d-flex justify-content-between"  *ngIf="order.couponName">
+                    <span>Reduce Amount : </span>
+                    <strong  class="text-primary">{{order.amount}} €</strong>
+                </li>
+               
+            </ul>
+            <form class="card p-2">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Coupon code" >
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-secondary">Apply</button>
+                    </div>
+                </div>
+            </form>
+         
+            <button  class="btn btn-success btn-lg btn-block mt-2" type="submit">Payment</button>
+
+
+        </div>
+
+        <div class="col-md-8 order-md-1" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+            <h4 class="mb-3">Delivery Informations</h4>
+            <form class="needs-validation" novalidate="">
+               
+                <div class="mb-3">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="address" required="">
+                    <div class="invalid-feedback"> Please enter your shipping address. </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="city">City </label>
+                    <input type="text" class="form-control" id="city" placeholder="city" >
+                    <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="city">N° boîte </label>
+                    <input type="number" class="form-control" id="city" placeholder="boîte" min="0" max="10">
+                    <div class="invalid-feedback"> Please enter a valid number for shipping updates. </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="city">Code postale</label>
+                    <input type="text" class="form-control" id="city" placeholder="codePostale" >
+                    <div class="invalid-feedback"> Please enter a valid postale code for shipping updates. </div>
+                </div>
+                
+            </form>
+            <button   class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+
+        </div>
+    </div>
+    
+</div>
