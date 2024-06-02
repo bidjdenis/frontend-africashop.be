@@ -17,7 +17,10 @@ export class CheckoutComponent implements OnInit{
   order! : Order;
   count! : number;
   couponForm! : FormGroup;
+  chekoutForm! : FormGroup;
   max! : number;
+  orderDetails: any;
+  valid : boolean = false;
 
 
   constructor(private memberService : MemberService,private fb : FormBuilder, 
@@ -27,6 +30,12 @@ export class CheckoutComponent implements OnInit{
     this.couponForm = this.fb.group({
       code: ["", [Validators.required]],
     });
+    this.chekoutForm = this.fb.group({
+      address: ["", [Validators.required]],
+      city: ["", [Validators.required]],
+      boite: ["", [Validators.required]],
+      codePostale: ["", [Validators.required]]
+    })
     this.getCartOrder()
   }
 
@@ -63,4 +72,25 @@ applyCoupon() {
 }
 
 
+checkout(){
+  this.valid = true;
+  this.memberService.checkout(this.chekoutForm.value).subscribe(res =>{
+    if (res.id != null) {
+      this.getOrderDetails();
+      this.snackbar.open('informations saved', 'close', {duration : 4000})
+    }else{
+      console.log("error")
+    }
+  })
+}
+
+getOrderDetails() {
+  this.memberService.getOrderDetails().subscribe(
+    (orderDetails: any) => {
+      console.log('Détails de la commande récupérés avec succès', orderDetails);
+      this.orderDetails = orderDetails;
+    },
+   
+  );
+}
 }

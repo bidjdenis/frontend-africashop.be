@@ -50,34 +50,34 @@
 
         <div class="col-md-8 order-md-1" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
             <h4 class="mb-3">Delivery Informations</h4>
-            <form class="needs-validation" novalidate="">
+            <form class="needs-validation" novalidate="" [formGroup]="chekoutForm">
                
                 <div class="mb-3">
                     <label for="address">Address</label>
-                    <input type="text" class="form-control" id="address" placeholder="address" required="">
+                    <input type="text" class="form-control" id="address" placeholder="address" required="" formControlName="address">
                     <div class="invalid-feedback"> Please enter your shipping address. </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="city">City </label>
-                    <input type="text" class="form-control" id="city" placeholder="city" >
+                    <input type="text" class="form-control" id="city" placeholder="city" formControlName="city" >
                     <div class="invalid-feedback"> Please enter a valid email address for shipping updates. </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="city">N° boîte </label>
-                    <input type="number" class="form-control" id="city" placeholder="boîte" min="0" max="10">
+                    <input type="number" class="form-control" id="boite" placeholder="boîte" min="0" max="10" formControlName="boite">
                     <div class="invalid-feedback"> Please enter a valid number for shipping updates. </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="city">Code postale</label>
-                    <input type="text" class="form-control" id="city" placeholder="codePostale" >
+                    <input type="text" class="form-control" id="city" placeholder="codePostale" formControlName="codePostale" >
                     <div class="invalid-feedback"> Please enter a valid postale code for shipping updates. </div>
                 </div>
                 
             </form>
-            <button   class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+            <button  (click)="checkout()" *ngIf="!valid" class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
 
         </div>
     </div>
