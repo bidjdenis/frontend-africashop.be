@@ -74,6 +74,11 @@ applyCoupon() {
 
 checkout(){
   this.valid = true;
+  if (this.chekoutForm.invalid) {
+    this.snackbar.open('Please fill out all required fields', 'close', { duration: 4000 });
+    this.valid = false;
+    return;
+  }
   this.memberService.checkout(this.chekoutForm.value).subscribe(res =>{
     if (res.id != null) {
       this.getOrderDetails();
