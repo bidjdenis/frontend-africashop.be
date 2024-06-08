@@ -12,6 +12,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { CouponComponent } from './components/coupon/coupon.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
     WishlistComponent,
     ProductDetailComponent,
     CheckoutComponent,
+    CouponComponent,
   ],
   imports: [
     CommonModule,

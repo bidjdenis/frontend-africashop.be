@@ -112,6 +112,11 @@ export class MemberService {
 
   }
 
+  getAllCoupons(): Observable<any>{
+    return this.http.get(this.BASIC_URL + `api/member/coupons`,{
+      headers : this.createAuthorizationHeader()
+    } )
+  }
   getProductById(id : number): Observable<any>{
     return this.http.get(this.BASIC_URL + `api/member/product/${id}`, {
       headers : this.createAuthorizationHeader()

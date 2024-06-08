@@ -24,6 +24,7 @@ export class EditCouponComponent implements OnInit{
       name: ['', [Validators.required]],
       code: ['', [Validators.required]],
       discount: ['', [Validators.required]],
+      description: ['', [Validators.required]],
       expirationDate: ['', [Validators.required]]
     })
 
@@ -43,6 +44,7 @@ export class EditCouponComponent implements OnInit{
       formdata.append('name', this.couponForm.get('name')?.value);
       formdata.append('code', this.couponForm.get('code')?.value);
       formdata.append('discount', this.couponForm.get('discount')?.value);
+      formdata.append('description', this.couponForm.get('description')?.value);
       formdata.append('expirationDate', this.couponForm.get('expirationDate')?.value);
 
       this.adminService.updateCoupon(this.coupon.id,formdata ).subscribe(res => {
@@ -56,6 +58,7 @@ export class EditCouponComponent implements OnInit{
     this.f.name.setValue(c.name);
     this.f.code.setValue(c.code);
     this.f.discount.setValue(c.discount);
+    this.f.description.setValue(c.description);
     this.f.expirationDate.setValue(c.expirationDate)
   }
 

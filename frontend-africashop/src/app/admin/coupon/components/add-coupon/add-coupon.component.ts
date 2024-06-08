@@ -20,6 +20,7 @@ export class AddCouponComponent implements OnInit{
       name: ['', [Validators.required]],
       code: ['', [Validators.required]],
       discount: ['', [Validators.required]],
+      description : ['', [Validators.required]],
       expirationDate: ['', [Validators.required]]
     })
   }

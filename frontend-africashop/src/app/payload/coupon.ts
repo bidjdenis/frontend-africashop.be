@@ -8,5 +8,7 @@ export class Coupon {
 
     discount! : number;
 
+    description! : string;
+
     expirationDate! : Date
 }

@@ -8,6 +8,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { CouponComponent } from './components/coupon/coupon.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'cart', component: CartComponent},
   {path:"wishlist", component: WishlistComponent},
   {path:"product-detail/:id", component : ProductDetailComponent},
-  {path:"checkout", component: CheckoutComponent}
+  {path:"checkout", component: CheckoutComponent},
+  {path: "coupon",component : CouponComponent}
 
 ];
 

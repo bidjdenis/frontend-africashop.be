@@ -1,0 +1,32 @@
+body {
+    background: #dedede;
+}
+.coupon .lg {
+    border-left: 1px dashed #ddd;
+    width: 40% !important;
+    position:relative;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.coupon .info::after, .coupon  .info::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #dedede;
+    border-radius: 100%;
+    
+}
+.coupon .info::before {
+    top: -10px;
+    left: -10px;
+}
+
+.coupon .info::after {
+    bottom: -10px;
+    left: -10px;
+}
+.coupon .time {
+    font-size: 1.6rem;
+}
