@@ -5,6 +5,7 @@ import { CartItemsDto } from '../../../payload/cartItemsDto';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { StripeService } from '../../../services/stripe/stripe.service';
 
 @Component({
   selector: 'app-checkout',
@@ -24,7 +25,7 @@ export class CheckoutComponent implements OnInit{
 
 
   constructor(private memberService : MemberService,private fb : FormBuilder, 
-    private router : Router, private snackbar : MatSnackBar){}
+    private router : Router, private snackbar : MatSnackBar, private stripeService : StripeService){}
 
   ngOnInit(): void {
     this.couponForm = this.fb.group({
@@ -97,5 +98,29 @@ getOrderDetails() {
     },
    
   );
+}
+
+initiatePayment(): void {
+  this.memberService.createCheckoutSession().subscribe(
+    (session: any) => {
+      if (session && session.id) {
+        this.redirectToStripeCheckout(session.id);
+      } else {
+        console.error('Session ID not found');
+      }
+    },
+    (error: any) => {
+      console.error('Error creating checkout session:', error);
+    }
+  );
+}
+
+redirectToStripeCheckout(sessionId: string): void {
+  const stripe = this.stripeService.getStripe();
+  stripe.redirectToCheckout({ sessionId: sessionId }).then((result: any) => {
+    if (result.error) {
+      console.error('Error redirecting to Stripe checkout:', result.error);
+    }
+  });
 }
 }

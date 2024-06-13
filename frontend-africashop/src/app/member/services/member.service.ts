@@ -163,6 +163,15 @@ export class MemberService {
       headers: this.createAuthorizationHeader(),
     })
   }
+
+  createCheckoutSession(): Observable<any> {
+    const userId = StorageService.getUserId();
+    const body = { userId: userId }; 
+    
+    return this.http.post(this.BASIC_URL + `api/member/create-checkout-session`, body, {
+      headers: this.createAuthorizationHeader(),
+    });  
+  }
   
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
