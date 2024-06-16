@@ -1,10 +1,10 @@
 import { CartItems } from "./cartItems";
+import { OrderItems } from "./orderItems";
 import { OrderStatus } from "./orderStatus";
 
 export class Order{
 
     id! : number;
-
     orderDescription! : string;
     date! :  Date;
     address! : string;
@@ -16,5 +16,7 @@ export class Order{
     userName! : string;
     email! : string;
     couponName! : string;
-    CartItemsDto! : CartItems[];
+    cartItemsDto! : CartItems[];
+    orderItems! : OrderItems[];
+    
 }

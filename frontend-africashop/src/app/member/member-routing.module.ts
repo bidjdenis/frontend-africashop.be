@@ -9,6 +9,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CouponComponent } from './components/coupon/coupon.component';
+import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:"wishlist", component: WishlistComponent},
   {path:"product-detail/:id", component : ProductDetailComponent},
   {path:"checkout", component: CheckoutComponent},
-  {path: "coupon",component : CouponComponent}
+  {path: "coupon",component : CouponComponent},
+  {path:"orders", component : OrdersComponent}
 
 ];
 

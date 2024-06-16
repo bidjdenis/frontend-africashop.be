@@ -1,0 +1,32 @@
+<table class="table" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+    <thead>
+      <tr>
+        <th>Tracking Id</th>
+        <th>Delivery Address</th>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Items</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let myOrder of myOrders">
+        <td>{{ myOrder.trackingId}}</td>
+        <td>{{ myOrder.address}}</td>
+        <td>{{ myOrder.date | date }}</td>
+        <td>{{ myOrder.amount | currency:'EUR' }}</td>
+        <td>
+            <span class="badge badge-success rounded-pill d-inline">{{myOrder.orderStatus}}</span>
+          </td>        
+          <td>
+          <div *ngFor="let item of myOrder.orderItems">
+            <p class="fw-bold mb-1">{{item.productName}}</p>
+            <img [src]="item.processedImg" alt="{{item.productName}}" style="width: 50px; height: 50px;">
+            <p class="text-muted mb-0">Quantity: {{item.quantity}}</p>
+            <p class="text-muted mb-0">Price: {{item.price}} €</p>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
