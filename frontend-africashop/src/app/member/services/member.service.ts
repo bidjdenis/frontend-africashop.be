@@ -195,6 +195,12 @@ export class MemberService {
     })
   }
 
+  sendReview(data:any):Observable<any>{
+    return this.http.post(this.BASIC_URL + `api/member/review`, data , {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
   
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(

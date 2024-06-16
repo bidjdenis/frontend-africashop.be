@@ -3,6 +3,8 @@ import { MemberService } from '../../services/member.service';
 import { ActivatedRoute,Router } from '@angular/router';
 import { Product } from '../../../payload/product';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { StorageService } from '../../../services/storage/storage.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -11,16 +13,39 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ProductDetailComponent implements OnInit{
 
-  product! : Product;
-  id! : number;
+  public products : Product[] = [];
+  public reviews : any[] = [];
+  product: any;
+  id! : number
+  reviewForm!: FormGroup;
+  selectedFile!: File;
+  imagePreview!: string | ArrayBuffer | null
+  submitted : boolean = false;
+  
   constructor(private memberService :MemberService, private activedRoute : ActivatedRoute, 
-    private snackbar : MatSnackBar, private router : Router){}
+    private snackbar : MatSnackBar, private router : Router, private fb: FormBuilder){}
 
   ngOnInit(): void {
+    this.reviewForm = this.fb.group({
+      rating: ["",[Validators.required]],
+      description: ["",[Validators.required]],
+    })
     this.id = this.activedRoute.snapshot.params['id'];
     this.getProduct();
   }
 
+  onFileSelected(event:any){
+    this.selectedFile = event.target.files[0];
+    this.previewImage();
+  }
+
+  previewImage(){
+    const reader = new FileReader();
+    reader.onload = () =>{
+      this.imagePreview = reader.result;
+    }
+    reader.readAsDataURL(this.selectedFile);
+  }
 
   getProduct(){
     this.memberService.getProductById(this.id).subscribe(res =>{
@@ -43,4 +68,20 @@ export class ProductDetailComponent implements OnInit{
     })
   }
 
+  get f (){return this.reviewForm.controls}
+
+  submitForm(){
+    this.submitted = true;
+    const formData: FormData = new FormData();
+    formData.append('img', this.selectedFile)
+    formData.append('productId', this.id.toString());
+    formData.append('userId', StorageService.getUserId().toString());
+    formData.append('rating', this.reviewForm.controls['rating'].value);
+    formData.append('description', this.reviewForm.controls['description'].value);
+
+    this.memberService.sendReview(formData).subscribe(res =>{
+      this.snackbar.open("Review is added", "close", {duration : 4000})
+      window.location.reload();      
+    })
+  }
 }
