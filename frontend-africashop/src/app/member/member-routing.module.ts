@@ -10,6 +10,7 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CouponComponent } from './components/coupon/coupon.component';
 import { OrdersComponent } from './orders/orders.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:"product-detail/:id", component : ProductDetailComponent},
   {path:"checkout", component: CheckoutComponent},
   {path: "coupon",component : CouponComponent},
-  {path:"orders", component : OrdersComponent}
+  {path:"orders", component : OrdersComponent},
+  {path:"profile", component : ProfileComponent}
 
 ];
 

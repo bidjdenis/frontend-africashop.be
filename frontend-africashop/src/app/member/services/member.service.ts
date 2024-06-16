@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { StorageService } from '../../services/storage/storage.service';
 import { Observable } from 'rxjs';
 import { ProductCart } from '../../payload/productCart';
+import { UserProfile } from '../../payload/userProfile';
 
 @Injectable({
   providedIn: 'root'
@@ -176,6 +177,20 @@ export class MemberService {
   getOrdersByUserId(): Observable<any>{
     const userId = StorageService.getUserId()
     return this.http.get(this.BASIC_URL + `api/member/myOrders/${userId}` , {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
+  getUserById(): Observable<any> {
+    const userId = StorageService.getUserId()
+    return this.http.get(this.BASIC_URL + `api/member/profile/${userId}` , {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
+  updateUser(userProfile: UserProfile): Observable<any> {
+    const userId = StorageService.getUserId()
+    return this.http.put(this.BASIC_URL + `api/member/updateProfile/${userId}` , userProfile,{
       headers: this.createAuthorizationHeader(),
     })
   }
