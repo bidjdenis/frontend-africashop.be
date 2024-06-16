@@ -96,7 +96,28 @@
                     </form>
                 </div>
             </div>
+            <div class="col-md-6 mt-3" >
+                <div class="review-list-container" style="background-color: orange; border-radius: 5px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                    <h4 style="text-align: center;">Users reviews</h4>
+                    <div *ngFor="let review of reviews" class="card mb-3" >
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3"  >
+                                <img [src]="review.processedImg" alt="Avatar" width="70" height="50" class="rounded-circle me-3">
+                                <div>
+                                    <p class="mb-0">{{ review.description }}</p>
+                                    <div class="text-muted small">Posted by {{ review.username | uppercase }}</div>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <span class="small">{{ review.rating }} étoile(s)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
+    </div>
     </div>
     
     

@@ -201,6 +201,12 @@ export class MemberService {
     })
   }
 
+  getAllReview(productId:any) : Observable<any>{
+    return this.http.get(this.BASIC_URL + `api/member/review/${productId}` , {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
   
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(

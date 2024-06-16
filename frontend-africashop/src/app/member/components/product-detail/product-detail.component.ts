@@ -32,6 +32,7 @@ export class ProductDetailComponent implements OnInit{
     })
     this.id = this.activedRoute.snapshot.params['id'];
     this.getProduct();
+    this.getReviews();
   }
 
   onFileSelected(event:any){
@@ -84,4 +85,16 @@ export class ProductDetailComponent implements OnInit{
       window.location.reload();      
     })
   }
+
+  getReviews(){
+    this.reviews = [];
+    this.memberService.getAllReview(this.id).subscribe(res => {
+     this.reviews = res;
+     this.reviews.forEach((element: { processedImg: string; returnedImg: string; }) => {
+       element.processedImg = 'data:image/jpeg;base64,' + element.returnedImg;
+       return element;
+ })
+    })
+   }
+ 
 }
