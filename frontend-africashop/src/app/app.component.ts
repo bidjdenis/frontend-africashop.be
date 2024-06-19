@@ -38,6 +38,6 @@ export class AppComponent implements OnInit{
 
   logout() {
     StorageService.signOut();
-    this.router.navigateByUrl('');
+    this.router.navigateByUrl('visitor/home');
   }
 }

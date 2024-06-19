@@ -1,6 +1,6 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-<div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn" >
+<div *ngIf="!isCustomerLoggedIn && !isAdminLoggedIn" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
   <div class="main-navbar shadow-sm sticky-top">
     <div class="top-navbar">
         <div class="container-fluid">
@@ -56,7 +56,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="" ><i class="fa fa-home" style="font-size:20px"></i> Home</a>
+                        <a class="nav-link" routerLink="visitor/home" ><i class="fa fa-home" style="font-size:20px"></i> Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -91,7 +91,7 @@
 </div>
 
 <div *ngIf="isCustomerLoggedIn" >
-    <div class="main-navbar shadow-sm sticky-top" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+    <div class="main-navbar shadow-sm sticky-top" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
       <div class="top-navbar">
           <div class="container-fluid">
               <div class="row">
@@ -99,12 +99,15 @@
                     <img src="assets/img/logo.png" alt="AFRICASHOP Logo" style="width: 150px;">
                 </div>
                 
-                  
+                    
                  
                   <div class="col-md-5 my-auto" style="margin-left: 500px;">
                     
                       <ul class="nav justify-content-end">
                         
+                        
+                        
+
                         <select id="select5" class="mt-1" style="height: 30px; border-radius: 5px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
                             <option value="en" selected>English</option>
                             <option value="fr">French</option>
@@ -126,7 +129,7 @@
                               </a>
                           </li>
                           
-                        <li class="nav-item">
+                        <li class="nav-item" >
                           <button routerLink="auth-pages/login" class="nav-link" (click)="logout()" style="color: white; background-color: brown; border-radius: 5px;"  role="button" aria-expanded="false">
                               Logout
                           </button>
