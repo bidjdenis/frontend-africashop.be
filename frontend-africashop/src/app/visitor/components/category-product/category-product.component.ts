@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { VisitorService } from '../../services/visitor.service';
 import { Product } from '../../../payload/product';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-category-product',
@@ -15,7 +16,8 @@ export class CategoryProductComponent implements OnInit{
   public searchKeyword: string = '';
   public id! : number
 
-  constructor(private visitorService : VisitorService, private activatedRoute : ActivatedRoute){}
+  constructor(private visitorService : VisitorService, private activatedRoute : ActivatedRoute, 
+    private router : Router, private snackBar : MatSnackBar){}
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params["id"];
@@ -49,6 +51,13 @@ export class CategoryProductComponent implements OnInit{
     console.log(this.applySearchFilter()); 
   }
 
+  addToCart(productId: number): void {
+    this.visitorService.addToCart(productId);
+    this.router.navigateByUrl("/visitor/cart");
+    this.snackBar.open('Product added successfuly', 'close', {duration : 5000});
+  }
+
+ 
 
 
 }
