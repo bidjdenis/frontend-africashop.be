@@ -77,6 +77,42 @@ getCartItemsWithDetails(): Observable<any[]> {
   return forkJoin(productDetailObservables);
 }
 
+addToWishlist(productId: number): void {
+  let wishlist = this.getWishlistItemsFromStorage() || [];
+  wishlist.push(productId);
+  localStorage.setItem(this.wishlistKey, JSON.stringify(wishlist));
+}
 
+getWishlistItems(): number[] {
+  const wishlistItemsString = localStorage.getItem(this.wishlistKey);
+  return wishlistItemsString ? JSON.parse(wishlistItemsString) : [];
+}
+
+ getWishlistItemsFromStorage(): number[] {
+  const wishliItemsString = localStorage.getItem(this.wishlistKey);
+  return wishliItemsString ? JSON.parse(wishliItemsString) : [];
+}
+
+removeFromWishlist(productId: number): void {
+  let wishlist = this.getWishlistItemsFromStorage() || [];
+  const index = wishlist.indexOf(productId);
+  if (index !== -1) {
+    wishlist.splice(index, 1);
+    localStorage.setItem(this.wishlistKey, JSON.stringify(wishlist));
+  }
+}
+
+
+getWishlistItemsWithDetails(): Observable<any[]> {
+  const wishlistItemIds = this.getWishlistItems();
+  const productDetailObservables: Observable<any>[] = [];
+
+  for (const productId of wishlistItemIds) {
+    const productDetailObservable = this.http.get<any>(this.BASIC_URL + `public/productDetail/${productId}`);
+    productDetailObservables.push(productDetailObservable);
+  }
+
+  return forkJoin(productDetailObservables);
+}
 
 }

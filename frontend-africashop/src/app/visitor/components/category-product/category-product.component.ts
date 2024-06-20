@@ -57,7 +57,11 @@ export class CategoryProductComponent implements OnInit{
     this.snackBar.open('Product added successfuly', 'close', {duration : 5000});
   }
 
- 
+  addToWishlist(productId: number){
+    this.visitorService.addToWishlist(productId);
+    this.router.navigateByUrl("/visitor/wishlist");
+    this.snackBar.open('Product added successfuly', 'close', {duration : 5000});
+  }
 
 
 }

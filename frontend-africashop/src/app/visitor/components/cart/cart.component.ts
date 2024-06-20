@@ -40,6 +40,7 @@ export class CartComponent implements OnInit{
     if (index !== -1) {
       cartItems.splice(index, 1);
       localStorage.setItem(this.cartItemsKey, JSON.stringify(cartItems));
+      window.location.reload();
     }
   }
   
