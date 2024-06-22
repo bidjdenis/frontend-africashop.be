@@ -31,4 +31,10 @@ export class ProductDetailComponent implements OnInit {
       this.product.processedImg = 'data:image/jpeg;base64,' + res.productDto.byteImg;
     })
   }
+
+  addToCart(productId: number): void {
+    this.visitorService.addToCart(productId);
+    this.router.navigateByUrl("/visitor/cart");
+    this.snackbar.open('Product added successfuly', 'close', {duration : 5000});
+  }
 }
