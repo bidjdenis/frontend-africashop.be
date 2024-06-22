@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VisitorService } from '../../services/visitor.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../../../payload/product';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-country-product',
@@ -15,7 +16,8 @@ export class CountryProductComponent implements OnInit{
   public searchKeyword: string = '';
   public id! : number
 
-  constructor(private visitorService :VisitorService,private activatedRoute : ActivatedRoute, private router : Router){}
+  constructor(private visitorService :VisitorService,private activatedRoute : ActivatedRoute, 
+    private router : Router, private snackBar : MatSnackBar){}
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params["id"];
@@ -46,6 +48,18 @@ export class CountryProductComponent implements OnInit{
 
   onSearchChange(): void {
     console.log(this.applySearchFilter()); 
+  }
+
+  addToCart(productId: number): void {
+    this.visitorService.addToCart(productId);
+    this.router.navigateByUrl("/visitor/cart");
+    this.snackBar.open('Product added successfuly', 'close', {duration : 5000});
+  }
+
+  addToWishlist(productId: number){
+    this.visitorService.addToWishlist(productId);
+    this.router.navigateByUrl("/visitor/wishlist");
+    this.snackBar.open('Product added successfuly', 'close', {duration : 5000});
   }
 
 }
