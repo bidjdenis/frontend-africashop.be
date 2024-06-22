@@ -6,6 +6,7 @@ import { CategoryProductComponent } from './components/category-product/category
 import { CartComponent } from './components/cart/cart.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { CouponComponent } from './components/coupon/coupon.component';
 
 const routes: Routes = [
   {path: '', component : HomeComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'category-product/:id', component: CategoryProductComponent},
   {path:'cart', component : CartComponent},
   {path:'wishlist', component : WishlistComponent},
-  {path:'product-detail/:id', component: ProductDetailComponent}
+  {path:'product-detail/:id', component: ProductDetailComponent},
+  {path:'coupon', component : CouponComponent}
 ];
 
 @NgModule({

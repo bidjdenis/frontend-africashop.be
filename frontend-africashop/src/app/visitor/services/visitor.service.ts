@@ -125,4 +125,9 @@ getAllReview(productId:any) : Observable<any>{
   })
 }
 
+getAllCoupons(): Observable<any>{
+  return this.http.get(this.BASIC_URL + `public/coupons`,{
+  } )
+}
+
 }
