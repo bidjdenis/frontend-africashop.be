@@ -44,6 +44,11 @@ getProductByCategory(id : number) : Observable<any>{
   })
 }
 
+getProductById(id : number): Observable<any>{
+  return this.http.get(this.BASIC_URL + `public/product/${id}`, {
+  });
+}
+
 sortProductsByPrice(pageNumber: number, ascending: boolean): Observable<any> {
   return this.http.get(`${this.BASIC_URL}public/products/sort?pageNumber=${pageNumber}&ascending=${ascending}`, {
   });

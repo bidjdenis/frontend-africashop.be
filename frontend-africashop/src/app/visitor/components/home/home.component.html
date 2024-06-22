@@ -182,7 +182,7 @@
               <div class="product-card-img">
                 <label class="stock bg-success">{{ p.countryName }}</label>
                 <img
-                  [routerLink]="['/member/product-detail/', p.id]"
+                  [routerLink]="['/visitor/product-detail/', p.id]"
                   [src]="p.processedImg"
                   alt="product-image"
                 />
@@ -216,7 +216,7 @@
                   ></a>
                   <a
                     class="btn btn1"
-                    [routerLink]="['/member/product-detail/', p.id]"
+                    [routerLink]="['/visitor/product-detail/', p.id]"
                     ><i class="fa fa-eye" style="font-size: 15px"></i
                   ></a>
                 </div>
