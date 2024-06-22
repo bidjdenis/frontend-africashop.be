@@ -120,4 +120,9 @@ getWishlistItemsWithDetails(): Observable<any[]> {
   return forkJoin(productDetailObservables);
 }
 
+getAllReview(productId:any) : Observable<any>{
+  return this.http.get(this.BASIC_URL + `public/review/${productId}` , {
+  })
+}
+
 }

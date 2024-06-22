@@ -8,6 +8,8 @@ export class Review{
 
     returnedImg! : string;
 
+    processedImg! : string;
+    
     userId! : number;
 
     productId! : number;

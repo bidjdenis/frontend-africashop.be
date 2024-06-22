@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Product } from '../../../payload/product';
+import { Review } from '../../../payload/review';
 
 @Component({
   selector: 'app-product-detail',
@@ -13,7 +14,9 @@ import { Product } from '../../../payload/product';
 export class ProductDetailComponent implements OnInit {
 
   product!: Product;
-  id! : number
+  id! : number;
+  public reviews :Review[] = [];
+
 
 
   constructor(private visitorService : VisitorService,private activedRoute : ActivatedRoute, 
@@ -23,6 +26,7 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.activedRoute.snapshot.params['id'];
     this.getProduct();
+    this.getReviews();
   }
 
   getProduct(){
@@ -43,4 +47,18 @@ export class ProductDetailComponent implements OnInit {
     this.router.navigateByUrl("/visitor/wishlist");
     this.snackbar.open('Product added successfuly', 'close', {duration : 5000});
   }
+
+  getReviews(){
+    this.reviews = [];
+    this.visitorService.getAllReview(this.id).subscribe(res => {
+     this.reviews = res;
+     this.reviews.forEach((review : Review) => {review.processedImg = "data:image/jpeg;base64," 
+     + review.returnedImg;
+       return review;
+ })
+    })
+   
+}
+
+
 }
