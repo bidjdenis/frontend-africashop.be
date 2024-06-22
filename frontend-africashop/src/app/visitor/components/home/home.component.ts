@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { VisitorService } from '../../services/visitor.service';
 import { Product } from '../../../payload/product';
 import { Category } from '../../../payload/category';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit{
   public filteredProducts: Product[] = [];
   public searchKeyword: string = '';
 
-  constructor(private visitorService : VisitorService){}
+  constructor(private visitorService : VisitorService, private snackBar : MatSnackBar){}
 
   ngOnInit(): void {
     this.getAllCategories();
@@ -96,7 +97,15 @@ export class HomeComponent implements OnInit{
     }
   }
   
-  
+  addToCart(productId: number): void {
+    this.visitorService.addToCart(productId);
+    this.snackBar.open('Product added successfuly', 'close', {duration : 5000});
+  }
+
+  addToWishlist(productId: number){
+    this.visitorService.addToWishlist(productId);
+    this.snackBar.open('Product added successfuly', 'close', {duration : 5000});
+  }
   
   
 
