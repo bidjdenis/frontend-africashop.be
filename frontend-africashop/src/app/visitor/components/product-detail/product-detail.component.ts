@@ -37,4 +37,10 @@ export class ProductDetailComponent implements OnInit {
     this.router.navigateByUrl("/visitor/cart");
     this.snackbar.open('Product added successfuly', 'close', {duration : 5000});
   }
+
+  addToWishlist(productId: number){
+    this.visitorService.addToWishlist(productId);
+    this.router.navigateByUrl("/visitor/wishlist");
+    this.snackbar.open('Product added successfuly', 'close', {duration : 5000});
+  }
 }
