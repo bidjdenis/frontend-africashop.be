@@ -130,4 +130,8 @@ getAllCoupons(): Observable<any>{
   } )
 }
 
+getOrderByTrackingId(trackingId: number): Observable<any>{
+  return this.http.get(this.BASIC_URL + `public/order/${trackingId}`);
+}
+
 }

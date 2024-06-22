@@ -1,0 +1,36 @@
+
+<form [formGroup]="searchOrderForm" class="search-form text-center mt-3" (submit)="submitForm()">
+    <div class="input-group" style="max-width: 300px; margin: 0 auto;">
+        <input type="text" class="form-control" formControlName="trackingId" placeholder="Enter Tracking Id to search" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+        <button class="btn btn-primary" type="submit" [disabled]="searchOrderForm.invalid"></button>
+    </div>
+</form>
+
+
+<div class="order-details-container mt-3" *ngIf="order" >
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">Order Details</h5>
+        </div>
+        <div class="card-body">
+            <div class="order-detail">
+                <strong>Tracking ID:</strong> {{ order.trackingId }}
+            </div>
+            <div class="order-detail">
+                <strong>User Name:</strong> {{ order.userName }}
+            </div>
+            <div class="order-detail">
+                <strong>Address:</strong> {{ order.address }}
+            </div>
+            <div class="order-detail">
+                <strong>Amount:</strong> {{ order.amount | currency:'EUR' }}
+            </div>
+            <div class="order-detail">
+                <strong>Status:</strong> {{ order.orderStatus }}
+            </div>
+            <div class="order-detail">
+                <strong>Date:</strong> {{ order.date | date }}
+            </div>
+        </div>
+    </div>
+</div>
