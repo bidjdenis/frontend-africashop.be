@@ -6,13 +6,15 @@ import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './components/users/users.component';
+import { OrdersComponent } from './components/orders/orders.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
     DashboardComponent,
-    UsersComponent
+    UsersComponent,
+    OrdersComponent
   ],
   imports: [
     CommonModule,

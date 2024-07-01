@@ -130,6 +130,12 @@ export class AdminService {
     });
   }
 
+  getAllOrders(): Observable<any>{
+    return this.http.get(this.BASIC_URL + 'api/admin/allOrders', {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + StorageService.getToken()

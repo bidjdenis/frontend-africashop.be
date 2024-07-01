@@ -1,0 +1,32 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.bold-cell {
+    font-weight: bold;
+}
+.table thead th {
+    background-color: #343a40;
+    color: #fff;
+}
+.table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+.status-badge {
+    padding: .4em .8em;
+    border-radius: .25rem;
+}
+.status-pending {
+    background-color: #ffc107;
+    color: #fff;
+}
+.status-completed {
+    background-color: #28a745;
+    color: #fff;
+}
+.status-cancelled {
+    background-color: #dc3545;
+    color: #fff;
+}
+.action-btn {
+    font-size: 1.2em;
+}
