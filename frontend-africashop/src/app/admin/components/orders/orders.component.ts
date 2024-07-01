@@ -24,4 +24,13 @@ export class OrdersComponent implements OnInit{
     })
   }
 
+  changeOrderStatus(orderId: number, status:string){
+    this.adminService.orderStatusChange(orderId,status).subscribe(res =>{
+      if(res.id != null){
+        this.getAllOrders();
+      }else{
+      }
+    })
+  }
+
 }

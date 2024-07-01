@@ -43,6 +43,16 @@
                                 </span>
                             </td>
                             <td>
+                                <div class="dropdown">
+                                    <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Update
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="cursor: pointer;">
+                                        <li><a class="dropdown-item" (click)="changeOrderStatus(order.id, 'Shipped')">Shipped</a></li>
+                                        <li><a class="dropdown-item" (click)="changeOrderStatus(order.id, 'Delivered')">Delivered</a></li>
+                                        <li><a class="dropdown-item" (click)="changeOrderStatus(order.id, 'Canceled')">Canceled</a></li>
+                                    </div>
+                                  </div>
                             </td>
                         </tr>
                     </tbody>

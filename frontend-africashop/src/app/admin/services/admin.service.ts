@@ -136,6 +136,12 @@ export class AdminService {
     })
   }
 
+  orderStatusChange(orderId: number, status: string): Observable<any>{
+    return this.http.get(this.BASIC_URL + `api/admin/order/${orderId}/${status}`, {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + StorageService.getToken()
