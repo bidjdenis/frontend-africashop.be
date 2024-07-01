@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './components/users/users.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ListProductComponent } from './components/list-product/list-product.component';
+import { AdminProfilComponent } from './components/admin-profil/admin-profil.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ListProductComponent } from './components/list-product/list-product.com
     DashboardComponent,
     UsersComponent,
     OrdersComponent,
-    ListProductComponent
+    ListProductComponent,
+    AdminProfilComponent
   ],
   imports: [
     CommonModule,
