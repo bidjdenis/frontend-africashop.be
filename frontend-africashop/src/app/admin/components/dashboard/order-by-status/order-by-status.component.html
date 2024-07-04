@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Status Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container mt-3" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+        <div class="order-status-container">
+            <div class="card order-status-card">
+                <div class="card-header d-flex align-items-center">
+                    <div class="status-avatar">P</div>
+                    <div class="ml-3">
+                        <h5 class="card-title mb-0">Placed</h5>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="status-value">{{ data.placed }}</div>
+                </div>
+            </div>
+
+            <div class="card order-status-card">
+                <div class="card-header d-flex align-items-center">
+                    <div class="status-avatar">S</div>
+                    <div class="ml-3">
+                        <h5 class="card-title mb-0">Shipped</h5>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="status-value">{{ data.shipped }}</div>
+                </div>
+            </div>
+
+            <div class="card order-status-card">
+                <div class="card-header d-flex align-items-center">
+                    <div class="status-avatar">D</div>
+                    <div class="ml-3">
+                        <h5 class="card-title mb-0">Delivered</h5>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="status-value">{{ data.delivered }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
