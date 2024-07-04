@@ -9,6 +9,7 @@ import { UsersComponent } from './components/users/users.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ListProductComponent } from './components/list-product/list-product.component';
 import { AdminProfilComponent } from './components/admin-profil/admin-profil.component';
+import { OrderByStatusComponent } from './components/dashboard/order-by-status/order-by-status.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AdminProfilComponent } from './components/admin-profil/admin-profil.com
     UsersComponent,
     OrdersComponent,
     ListProductComponent,
-    AdminProfilComponent
+    AdminProfilComponent,
+    OrderByStatusComponent
   ],
   imports: [
     CommonModule,

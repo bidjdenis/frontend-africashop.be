@@ -143,6 +143,12 @@ export class AdminService {
     })
   }
 
+  getAnalytics(): Observable<any>{
+    return this.http.get(this.BASIC_URL + 'api/admin/order/analytics', {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+  
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + StorageService.getToken()

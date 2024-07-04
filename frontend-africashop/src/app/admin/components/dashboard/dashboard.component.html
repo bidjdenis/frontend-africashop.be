@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="text-center mb-4">
+            <app-order-by-status [data]="data"></app-order-by-status>
+        </div>
+
+        <div class="analytics-container">
+            <div class="card analytics-card">
+                <div class="card-header bg-primary text-white d-flex align-items-center">
+                    <div class="metric-avatar">O</div>
+                    <div class="ml-3">
+                        <h5 class="card-title mb-0">Orders</h5>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="metric-value">{{ data.currentMonthOrders }}</div>
+                    <div class="metric-subtext">Current Month</div>
+                    <div class="previous-month">
+                        <div class="metric-value">{{ data.previousMonthOrders }}</div>
+                        <div class="metric-subtext">Previous Month</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card analytics-card">
+                <div class="card-header bg-success text-white d-flex align-items-center">
+                    <div class="metric-avatar">E</div>
+                    <div class="ml-3">
+                        <h5 class="card-title mb-0">Earnings</h5>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="metric-value">{{ data.currentMonthEarnings | currency:'EUR':true }}</div>
+                    <div class="metric-subtext">Current Month</div>
+                    <div class="previous-month">
+                        <div class="metric-value">{{ data.previousMonthEarnings | currency:'EUR':true }}</div>
+                        <div class="metric-subtext">Previous Month</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

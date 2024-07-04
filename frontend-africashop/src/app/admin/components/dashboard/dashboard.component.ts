@@ -9,11 +9,16 @@ import { Product } from '../../../payload/product';
 })
 export class DashboardComponent implements OnInit{
 
+  data:any;
 
   constructor(private adminService : AdminService){}
 
   ngOnInit(): void {
-
+    this.adminService.getAnalytics().subscribe(res => {
+      this.data = res;
+    }, error => {
+      console.error("Error fetching analytics data", error);
+    });
   }
 
   

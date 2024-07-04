@@ -1,0 +1,51 @@
+body {
+    background-color: #f8f9fc;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.analytics-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.analytics-card {
+    margin: 10px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    border: 1px solid #d1d3e2;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+.analytics-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.metric-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #4e73df;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #ffffff;
+}
+.metric-value {
+    font-size: 32px;
+    font-weight: bold;
+    color: #4e73df;
+    margin-top: 10px;
+}
+.metric-subtext {
+    font-size: 16px;
+    color: #858796;
+    margin-top: 5px;
+}
+.previous-month {
+    margin-top: 20px;
+    border-top: 1px solid #d1d3e2;
+    padding-top: 15px;
+}
