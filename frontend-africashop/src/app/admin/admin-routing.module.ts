@@ -27,6 +27,10 @@ const routes: Routes = [
     {
       path:'coupon',
       loadChildren : () => import("./coupon/coupon.module").then((m) => m.CouponModule)
+    },
+    {
+      path:'blog',
+      loadChildren : () => import("./blog/blog.module").then((m) => m.BlogModule)
     }
   ]
   },

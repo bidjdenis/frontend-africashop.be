@@ -149,6 +149,11 @@ export class AdminService {
     })
   }
   
+  createBlog(data:any):Observable<any>{
+    return this.http.post(this.BASIC_URL +'api/admin/addBlog', data, {
+      headers : this.createAuthorizationHeader()
+    });
+  }
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + StorageService.getToken()
