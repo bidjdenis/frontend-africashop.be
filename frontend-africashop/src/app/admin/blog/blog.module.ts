@@ -5,12 +5,14 @@ import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './blog.component';
 import { AddBlogComponent } from './components/add-blog/add-blog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListBlogComponent } from './components/list-blog/list-blog.component';
 
 
 @NgModule({
   declarations: [
     BlogComponent,
-    AddBlogComponent
+    AddBlogComponent,
+    ListBlogComponent
   ],
   imports: [
     CommonModule,
