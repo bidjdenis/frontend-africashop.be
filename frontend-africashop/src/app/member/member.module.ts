@@ -15,6 +15,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { CouponComponent } from './components/coupon/coupon.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ProfileComponent } from './profile/profile.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ProfileComponent } from './profile/profile.component';
     CouponComponent,
     OrdersComponent,
     ProfileComponent,
+    BlogComponent
   ],
   imports: [
     CommonModule,

@@ -207,6 +207,11 @@ export class MemberService {
     })
   }
 
+  getAllBlogs():Observable<any>{
+    return this.http.get(this.BASIC_URL + 'api/member/blogs', {
+      headers :this.createAuthorizationHeader()
+    });
+  }
   
   private createAuthorizationHeader(): HttpHeaders{
     return new HttpHeaders().set(
