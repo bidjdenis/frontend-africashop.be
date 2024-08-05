@@ -12,6 +12,7 @@ import { CouponComponent } from './components/coupon/coupon.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent},
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path: "coupon",component : CouponComponent},
   {path:"orders", component : OrdersComponent},
   {path:"profile", component : ProfileComponent},
-  {path:"blog", component: BlogComponent}
+  {path:"blog", component: BlogComponent},
+  {path:"blog-detail/:id", component: BlogDetailComponent}
 
 ];
 

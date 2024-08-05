@@ -43,7 +43,7 @@
                                 <p class="mt-2 custom-div">
                                   <a class="custom-link">{{b.content}}</a> 
                                 </p>
-                                <button type="button" class="btn btn-success btn-rounded" mdbRipple>Read more</button>
+                                <button type="button" [routerLink]="['/member/blog-detail/', b.id]"class="btn btn-success btn-rounded" mdbRipple>Read more</button>
                             </div>
                         </div>
                     </div>
