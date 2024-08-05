@@ -134,4 +134,14 @@ getOrderByTrackingId(trackingId: number): Observable<any>{
   return this.http.get(this.BASIC_URL + `public/order/${trackingId}`);
 }
 
+getAllBlogs():Observable<any>{
+  return this.http.get(this.BASIC_URL + `public/blogs`, {
+  });
+}
+
+getBlogById(id : number): Observable<any>{
+  return this.http.get(this.BASIC_URL + `public/blog/${id}`, {
+  });
+}
+
 }

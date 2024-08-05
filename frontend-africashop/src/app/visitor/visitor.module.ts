@@ -12,6 +12,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CouponComponent } from './components/coupon/coupon.component';
 import { TrackingComponent } from './components/tracking/tracking.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { TrackingComponent } from './components/tracking/tracking.component';
     WishlistComponent,
     ProductDetailComponent,
     CouponComponent,
-    TrackingComponent
+    TrackingComponent,
+    BlogComponent,
+    BlogDetailComponent
   ],
   imports: [
     CommonModule,

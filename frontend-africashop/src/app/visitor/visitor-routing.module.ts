@@ -8,6 +8,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CouponComponent } from './components/coupon/coupon.component';
 import { TrackingComponent } from './components/tracking/tracking.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 
 const routes: Routes = [
   {path: '', component : HomeComponent},
@@ -18,7 +20,9 @@ const routes: Routes = [
   {path:'wishlist', component : WishlistComponent},
   {path:'product-detail/:id', component: ProductDetailComponent},
   {path:'coupon', component : CouponComponent},
-  {path:'tracking', component : TrackingComponent}
+  {path:'tracking', component : TrackingComponent},
+  {path:'blog', component: BlogComponent},
+  {path:'blog-detail/:id', component: BlogDetailComponent}
 ];
 
 @NgModule({

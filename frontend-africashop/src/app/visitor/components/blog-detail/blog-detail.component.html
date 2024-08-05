@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Post</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      #intro {
+        margin-top: 58px;
+      }
+
+      @media (max-width: 991px) {
+        #intro {
+          margin-top: 45px;
+        }
+      }
+
+      .card-img-top {
+        height: 400px;
+        object-fit: cover;
+      }
+
+      .card {
+        margin: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header></header>
+
+    <main class="my-5">
+      <section class="text-center">
+        <div class="container" *ngIf="blog">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-12 mb-4">
+              <div class="card">
+                <div
+                  class="bg-image hover-overlay"
+                  data-mdb-ripple-init
+                  data-mdb-ripple-color="light"
+                >
+                  <img
+                    [src]="blog.processedImg"
+                    alt="product-image"
+                    class="img-fluid"
+                  />
+                </div>
+                <div
+                  class="card-body"
+                  style="font-family: Arial, Helvetica, sans-serif"
+                >
+                  <h5 class="card-title">{{ blog.title }}</h5>
+                  <p class="card-text">
+                    {{ blog.content }}
+                  </p>
+                  <a>
+                    <div
+                      class="mask"
+                      style="
+                        background-color: rgba(251, 251, 251, 0.15);
+                        font-family: 'Franklin Gothic Medium', 'Arial Narrow',
+                          Arial, sans-serif;
+                      "
+                      class="mb-3"
+                    >
+                      Posted {{ blog.date }}
+                    </div>
+                  </a>
+                  <div>
+                    <button class="btn" id="green">
+                      <i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn" id="red">
+                      <i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i>
+                    </button>
+                  </div>
+
+                  <a
+                    routerLink="/visitor/blog"
+                    class="btn btn-primary mt-3"
+                    data-mdb-ripple-init
+                    >Go back</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

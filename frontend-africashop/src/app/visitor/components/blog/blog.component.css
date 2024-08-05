@@ -1,0 +1,15 @@
+.custom-div {
+    margin-top: 2px;
+    background-color: beige;
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-link {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: 'Times New Roman', Times, serif;
+  }
