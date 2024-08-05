@@ -58,3 +58,12 @@
     line-height: 20px; 
     cursor: pointer;
 }
+
+.copyright-area .social-media{
+    text-align: end;
+}
+.copyright-area .social-media a{
+    margin: 0px 10px;
+    color: #fff;
+    width: 20px;
+}

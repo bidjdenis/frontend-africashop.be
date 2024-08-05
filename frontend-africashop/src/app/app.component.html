@@ -56,39 +56,47 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" routerLink="visitor/home" ><i class="fa fa-home" style="font-size:20px"></i> Home</a>
+                        <a class="nav-link d-flex align-items-center" routerLink="visitor/home">
+                            <i class="fa fa-home" style="font-size:20px; margin-right: 8px;"></i> Home
+                        </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-flag-o" style="font-size:20px"></i> Countries
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-flag-o" style="font-size:20px; margin-right: 8px;"></i> Countries
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <ng-container *ngFor="let c of countries">
-                                <div class="dropdown-item"[routerLink]="['/visitor/country-product/', c.id]">
-                                    <img [src]="c.processedImg" alt="Country Image" class="country-image">
+                                <a class="dropdown-item d-flex align-items-center" [routerLink]="['/visitor/country-product/', c.id]">
+                                    <img [src]="c.processedImg" alt="Country Image" class="country-image mr-2" style="width: 20px; height: 20px;">
                                     <span class="country-name">{{c.name}}</span>
-                                </div>
+                                </a>
                             </ng-container>
                         </div>
                     </li>
-                  
                     <li class="nav-item">
-                      <a class="nav-link" routerLink="visitor/coupon">
-                          <i class="fa fa-money" style="font-size:20px"></i> Coupons
-                      </a>
-                  </li>
-                  <li class="nav-item">
-                    <a  class="nav-link" routerLink="visitor/tracking">
-                       Orders Tracking
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a  routerLink="/visitor/blog" class="nav-link" href="#">
-                       Blog
-                    </a>
-                </li>
-                  
+                        <a class="nav-link d-flex align-items-center" routerLink="visitor/coupon">
+                            <i class="fa fa-money" style="font-size:20px; margin-right: 8px;"></i> Coupons
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" routerLink="visitor/tracking">
+                            <i class="fa fa-map-marker" style="font-size:20px; margin-right: 8px;"></i> Orders Tracking
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center" routerLink="/visitor/blog">
+                            <i class="fa fa-newspaper-o" style="font-size:20px; margin-right: 8px;"></i> Blog
+                        </a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center" style="margin-left: 450px;">
+                        <a href="#" class="nav-link"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="nav-link"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="nav-link"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="nav-link"><i class="fa fa-youtube"></i></a>
+                        
+                    </li>
                 </ul>
+                
             </div>
         </div>
     </nav>
@@ -178,9 +186,16 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a routerLink="/member/blog"  class="nav-link">
-                           Blog
+                        <a class="nav-link d-flex align-items-center" routerLink="/member/blog">
+                            <i class="fa fa-newspaper-o" style="font-size:20px; margin-right: 8px;"></i> Blog
                         </a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center" style="margin-left: 600px;">
+                        <a href="#" class="nav-link"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="nav-link"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="nav-link"><i class="fa fa-instagram"></i></a>
+                        <a href="#" class="nav-link"><i class="fa fa-youtube"></i></a>
+                        
                     </li>
                     
                   </ul>
