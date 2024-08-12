@@ -3,6 +3,7 @@ import { VisitorService } from '../../services/visitor.service';
 import { Product } from '../../../payload/product';
 import { Category } from '../../../payload/category';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit{
   constructor(private visitorService : VisitorService, private snackBar : MatSnackBar){}
 
   ngOnInit(): void {
+
     this.getAllCategories();
     this.getProducts();
   }

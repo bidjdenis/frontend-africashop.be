@@ -17,6 +17,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { BlogDetailComponent } from './components/blog-detail/blog-detail.compon
     MemberRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule
   ]
 })
 export class MemberModule { }

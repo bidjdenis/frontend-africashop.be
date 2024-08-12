@@ -29,7 +29,7 @@
                       sans-serif;
                   "
                 >
-                  <h3>Catégories</h3>
+                  <h3>{{'Catégories' | translate}}</h3>
                 </div>
                 <a
                   class="nav-link my-0 py-2 ps-3 bg-white"
@@ -40,7 +40,7 @@
                     color: blue;
                   "
                   *ngFor="let c of listeOfCategories"
-                  >{{ c.name }}</a
+                  >{{ 'CATEGORIES.' + c.name | translate}}</a
                 >
               </nav>
             </div>
@@ -120,7 +120,7 @@
           border-radius: 5px;
         "
       >
-        <h3>Nos Produits</h3>
+        <h3>{{'Nos Produits' | translate}}</h3>
       </div>
       <hr />
       <div
@@ -138,12 +138,12 @@
                 class="sort-options"
                 style="margin-right: 15px; margin-top: 5px"
               >
-                <label for="sort-select">Sort by: </label>
+                <label for="sort-select">{{'Sort by' | translate}}: </label>
                 &nbsp;
                 <select id="sort-select" (change)="onSortChange($event)">
-                  <option value="default">Default</option>
-                  <option value="low-to-high">Low to High</option>
-                  <option value="high-to-low">High to Low</option>
+                  <option value="default">{{'Par défaut' | translate }}</option>
+                  <option value="low-to-high">{{'Du moins cher au plus cher' | translate}}</option>
+                  <option value="high-to-low">{{'Du plus cher au moins cher' | translate}}</option>
                 </select>
               </div>
             </span>
@@ -188,7 +188,7 @@
                 />
               </div>
               <div class="product-card-body">
-                <p class="product-brand">{{ p.categoryName }}</p>
+                <p class="product-brand">{{ p.categoryName}}</p>
                 <h5 class="product-name">
                   <a style="color: blue">
                     {{ p.name }}
@@ -240,7 +240,7 @@
           *ngIf="visible"
           (click)="getBackProducts()"
         >
-          <<< Go back
+          {{'<<< Retour' | translate}}
         </button></span
       >
       &nbsp;
@@ -249,7 +249,7 @@
         class="btn btn-warning"
         (click)="loadMoreProducts()"
       >
-        Load more >>>
+        {{'Charger plus >>>' | translate}}
       </button>
     </div>
 
@@ -272,16 +272,16 @@
             </p>
           </div>
           <div class="col-md-3">
-            <h4 class="footer-heading">Quick Links</h4>
+            <h4 class="footer-heading">{{'Liens rapides' | translate}}</h4>
             <div class="footer-underline"></div>
-            <div class="mb-2"><a href="" class="text-white">Home</a></div>
+            <div class="mb-2"><a href="" class="text-white">{{'HOME' | translate}}</a></div>
             <div class="mb-2"><a href="" class="text-white">About Us</a></div>
             <div class="mb-2"><a href="" class="text-white">Contact Us</a></div>
-            <div class="mb-2"><a href="" class="text-white">Blogs</a></div>
+            <div class="mb-2"><a href="" class="text-white">{{'Blog' | translate}}</a></div>
             <div class="mb-2"><a href="" class="text-white">Sitemaps</a></div>
           </div>
           <div class="col-md-3">
-            <h4 class="footer-heading">Shop Now</h4>
+            <h4 class="footer-heading">{{'Achetez maintenant' | translate}}</h4>
             <div class="footer-underline"></div>
             <div class="mb-2">
               <a href="" class="text-white">Collections</a>
@@ -295,10 +295,10 @@
             <div class="mb-2">
               <a href="" class="text-white">Featured Products</a>
             </div>
-            <div class="mb-2"><a href="" class="text-white">Cart</a></div>
+            <div class="mb-2"><a href="" class="text-white"> {{ 'CART' | translate }}</a></div>
           </div>
           <div class="col-md-3">
-            <h4 class="footer-heading">Reach Us</h4>
+            <h4 class="footer-heading">{{'Nous contacter' | translate}}</h4>
             <div class="footer-underline"></div>
             <div class="mb-2">
               <p>

@@ -14,6 +14,7 @@ import { CouponComponent } from './components/coupon/coupon.component';
 import { TrackingComponent } from './components/tracking/tracking.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { BlogDetailComponent } from './components/blog-detail/blog-detail.compon
     VisitorRoutingModule, 
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslateModule
   ]
 })
 export class VisitorModule { }
