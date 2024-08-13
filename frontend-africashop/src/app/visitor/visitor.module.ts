@@ -15,6 +15,9 @@ import { TrackingComponent } from './components/tracking/tracking.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { CdvComponent } from './components/cdv/cdv.component';
+import { MentionsLegaleComponent } from './components/mentions-legale/mentions-legale.component';
+import { ProtectionComponent } from './components/protection/protection.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { TranslateModule } from '@ngx-translate/core';
     CouponComponent,
     TrackingComponent,
     BlogComponent,
-    BlogDetailComponent
+    BlogDetailComponent,
+    CdvComponent,
+    MentionsLegaleComponent,
+    ProtectionComponent
   ],
   imports: [
     CommonModule,
