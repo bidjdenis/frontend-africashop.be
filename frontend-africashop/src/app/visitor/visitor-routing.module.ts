@@ -10,6 +10,9 @@ import { CouponComponent } from './components/coupon/coupon.component';
 import { TrackingComponent } from './components/tracking/tracking.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
+import { CdvComponent } from './components/cdv/cdv.component';
+import { MentionsLegaleComponent } from './components/mentions-legale/mentions-legale.component';
+import { ProtectionComponent } from './components/protection/protection.component';
 
 const routes: Routes = [
   {path: '', component : HomeComponent},
@@ -22,7 +25,10 @@ const routes: Routes = [
   {path:'coupon', component : CouponComponent},
   {path:'tracking', component : TrackingComponent},
   {path:'blog', component: BlogComponent},
-  {path:'blog-detail/:id', component: BlogDetailComponent}
+  {path:'blog-detail/:id', component: BlogDetailComponent},
+  {path: 'cdv', component: CdvComponent},
+  {path: 'mentions-legale', component : MentionsLegaleComponent},
+  {path: 'protection', component : ProtectionComponent}
 ];
 
 @NgModule({
