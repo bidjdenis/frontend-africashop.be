@@ -32,24 +32,24 @@
 
         <div class="form-group">
             <label for="password">Password</label>
-            <input [ngClass]="{'is-invalid': submitted && f.password.errors}" formControlName="password" class="form-control" type="text">
+            <input [ngClass]="{'is-invalid': submitted && f.password.errors}" formControlName="password" class="form-control" type="password">
             <div *ngIf="f.password.errors" class="invalid-feedback">
                 <div>
                     <i>Required password</i>
                 </div>
             </div>
         </div>
-
+        
         <div class="form-group">
             <label for="confirmPassword">Confirm password</label>
-            <input [ngClass]="{'is-invalid': submitted && f.confirmPassword.errors}" formControlName="confirmPassword" class="form-control" type="text">
+            <input [ngClass]="{'is-invalid': submitted && f.confirmPassword.errors}" formControlName="confirmPassword" class="form-control" type="password">
             <div *ngIf="f.confirmPassword.errors" class="invalid-feedback">
                 <div>
                     <i>Required password</i>
                 </div>
             </div>
         </div>
-
+        
         <div class="form-group">
             <button type="submit" class="btn btn-outline-success btn-block mt-2" >Sign up</button>
         </div>

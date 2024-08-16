@@ -23,7 +23,7 @@
     
             <div class="form-group">
                 <label for="password">Password</label>
-                <input [ngClass]="{'is-invalid': submitted && f.password.errors}" formControlName="password" class="form-control" type="text">
+                <input [ngClass]="{'is-invalid': submitted && f.password.errors}" formControlName="password" class="form-control" type="password">
                 <div *ngIf="f.password.errors" class="invalid-feedback">
                     <div>
                         <i>Required password</i>
