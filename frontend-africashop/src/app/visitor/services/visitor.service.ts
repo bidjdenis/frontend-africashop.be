@@ -7,7 +7,7 @@ import { Observable, forkJoin } from 'rxjs';
 })
 export class VisitorService {
 
-  BASIC_URL = "http://localhost:8080/";
+  BASIC_URL = "http://35.180.121.254:8081/";
   private cartItemsKey = 'cartItems';
   private wishlistKey = 'wishList';
 

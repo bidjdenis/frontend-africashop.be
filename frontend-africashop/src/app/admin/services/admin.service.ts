@@ -11,7 +11,7 @@ import { Coupon } from '../../payload/coupon';
 })
 export class AdminService {
 
-  BASIC_URL = "http://localhost:8080/";
+  BASIC_URL = "http://35.180.121.254:8081/";
 
   constructor(private http : HttpClient) { }
 

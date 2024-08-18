@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  africashop-frontend:
+    container_name: africashop-frontend
+    image: africashop-frontend:web  # Utilisation de la version 'latest' pour l'image construite
+    ports:
+      - "80:80"
+    restart: unless-stopped  # Redémarre le conteneur sauf si vous l'arrêtez manuellement
+    volumes:
+      - ./nginx.conf:/ etc/nginx/nginx.conf  # Monte le fichier de configuration Nginx
+    environment:
+      - NODE_ENV=production  # Assurez-vous que l'environnement est configuré en production
