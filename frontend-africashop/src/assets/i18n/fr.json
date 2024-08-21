@@ -41,5 +41,22 @@
   "Achetez maintenant": "Achetez maintenant",
   "Nous contacter": "Nous contacter",
   "COPYRIGHT": "© 2024 - Africa'shop - Ecommerce. Tous droits réservés.", 
-  "GET_CONNECTED": "Restez connectés"  
+  "GET_CONNECTED": "Restez connectés",
+  "Email": "Adresse électronique",
+  "Required email": "Adresse requis",
+  "Password": "Mot de passe",
+  "Required password": "Mot de passe requis",
+  "Create account?": "Créer un compte?",
+  "Sign up here": "S'inscrire ici",
+  "Registration": "Inscription",
+  "Name": "Nom",
+  "Required name": "Nom requis",
+  "Confirm password": "Confirmer mot de passe",
+  "Sign up": "S'enregistrer",
+  "Have already an account?": "Avez vous déja un compte?",
+  "Login here" : "Se connecter ici",
+  "Listes des produits trouvés...": "Listes des produits trouvés...",
+  "Conditions générales de ventes": "Conditions générales de ventes",
+  "Protection des données": "Protection des données",
+  "Mentions légales": "Mentions légales"
 }

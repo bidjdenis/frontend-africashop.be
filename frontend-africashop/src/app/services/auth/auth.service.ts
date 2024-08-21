@@ -9,7 +9,7 @@ import { User } from '../../payload/user';
 })
 export class AuthService {
 
-  BASIC_URL = "http://35.180.121.254:8081/";
+  BASIC_URL = "http://35.180.143.249:8081/";
 
   constructor(private http: HttpClient, private storageService : StorageService) { }
 

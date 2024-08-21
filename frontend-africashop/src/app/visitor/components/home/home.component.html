@@ -3,104 +3,52 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+   
   </head>
   <body>
     <section class="mt-3">
       <div class="container">
         <main class="card p-3 shadow-2-strong" style="border-style: double">
           <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-4 mb-3 mb-lg-0">
               <nav class="nav flex-column nav-pills mb-md-2">
-                <div
-                  class="nav-link active py-2 ps-3 my-0"
-                  aria-current="page"
-                  style="
-                    background-color: brown;
-                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
-                      sans-serif;
-                  "
-                >
+                <div class="nav-link active py-2 ps-3 my-0" aria-current="page" style="background-color: brown; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
                   <h3>{{'Catégories' | translate}}</h3>
                 </div>
-                <a
-                  class="nav-link my-0 py-2 ps-3 bg-white"
-                  [routerLink]="['/visitor/category-product/', c.id]"
-                  style="
-                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
-                      sans-serif;
-                    color: blue;
-                  "
-                  *ngFor="let c of listeOfCategories"
-                  >{{ 'CATEGORIES.' + c.name | translate}}</a
-                >
+                <a class="nav-link my-0 py-2 ps-3 bg-white" [routerLink]="['/visitor/category-product/', c.id]" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: blue;" *ngFor="let c of listeOfCategories">
+                  {{ 'CATEGORIES.' + c.name | translate }}
+                </a>
               </nav>
             </div>
-            <div class="col-lg-9" style="width: 500px; margin-left: 200px">
-              <div
-                class="card-banner h-auto p-5 bg-success rounded-3"
-                style="height: 50px; width: 600px; margin-left: 1O0px"
-              >
-                <div
-                  id="carouselExampleControls"
-                  class="carousel slide"
-                  data-ride="carousel"
-                >
+            <div class="col-lg-9 col-md-8">
+              <div class="card-banner h-auto p-5 bg-success rounded-3">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img
-                        class="d-block w-100"
-                        src="assets/img/home.jpg"
-                        alt="First slide"
-                      />
+                      <img class="d-block w-100" src="assets/img/home.jpg" alt="First slide"/>
                     </div>
                     <div class="carousel-item">
-                      <img
-                        class="d-block w-100"
-                        src="assets/img/home1.jpg"
-                        alt="Second slide"
-                      />
+                      <img class="d-block w-100" src="assets/img/home1.jpg" alt="Second slide"/>
                     </div>
                     <div class="carousel-item">
-                      <img
-                        class="d-block w-100"
-                        src="assets/img/home3.jpg"
-                        alt="Third slide"
-                      />
+                      <img class="d-block w-100" src="assets/img/home3.jpg" alt="Third slide"/>
                     </div>
                   </div>
-                  <a
-                    class="carousel-control-prev"
-                    href="#carouselExampleControls"
-                    role="button"
-                    data-slide="prev"
-                  >
-                    <span
-                      class="carousel-control-prev-icon"
-                      aria-hidden="true"
-                    ></span>
+                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                   </a>
-                  <a
-                    class="carousel-control-next"
-                    href="#carouselExampleControls"
-                    role="button"
-                    data-slide="next"
-                  >
-                    <span
-                      class="carousel-control-next-icon"
-                      aria-hidden="true"
-                    ></span>
+                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                   </a>
+                  <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselExampleControls" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carouselExampleControls" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carouselExampleControls" data-bs-slide-to="2"></li>
+                  </ol>
                 </div>
               </div>
             </div>
@@ -108,6 +56,23 @@
         </main>
       </div>
     </section>
+
+    <div class="container" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+      <div class="info-banner d-flex justify-content-between align-items-center">
+          <div class="info-item text-center">
+              <i class="icon-delivery"></i>
+              <p>Livraison <br>Gratuite <br>à partir de 59€<br><span>max 5kg</span></p>
+          </div>
+          <div class="info-item text-center">
+              <i class="icon-payment"></i>
+              <p>Paiement <br>100% Sécurisé</p>
+          </div>
+          <div class="info-item text-center">
+              <i class="icon-satisfaction"></i>
+              <p>Clients <br>Satisfaits <br><span>99%</span></p>
+          </div>
+      </div>
+    </div>
 
     <div class="py-3 py-md-5 bg-light">
       <div
@@ -275,9 +240,9 @@
             <h4 class="footer-heading">{{'Liens rapides' | translate}}</h4>
             <div class="footer-underline"></div>
             <div class="mb-2"><a href="" class="text-white">{{'HOME' | translate}}</a></div>
-            <div class="mb-2"><a routerLink="/visitor/cdv" class="text-white">Conditions générales de ventes</a></div>
-            <div class="mb-2"><a routerLink="/visitor/protection" class="text-white">Protection des données</a></div>
-            <div class="mb-2"><a routerLink="/visitor/mentions-legale"class="text-white">Mentions légales</a></div>
+            <div class="mb-2"><a routerLink="/visitor/cdv" class="text-white">{{'Conditions générales de ventes' | translate}}</a></div>
+            <div class="mb-2"><a routerLink="/visitor/protection" class="text-white">{{'Protection des données' | translate}}</a></div>
+            <div class="mb-2"><a routerLink="/visitor/mentions-legale"class="text-white">{{'Mentions légales' | translate}}</a></div>
             <div class="mb-2"><a  class="text-white">Sitemaps</a></div>
           </div>
           <div class="col-md-3">
@@ -338,7 +303,6 @@
         </div>
       </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
